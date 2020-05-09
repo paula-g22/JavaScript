@@ -1,68 +1,65 @@
-x = '5'
-weapon = 'knife'
-
-console.log(x + weapon)
-
-
-
-
-
-/*
- * Programming Quiz: Musical Groups (3-3)
- */
-/*
- * QUIZ REQUIREMENTS
- * 1. Your code should have a variable `musicians`, and include `if...else if...else` conditional statement
- * 2. Your code should produce the expected output, as mentioned above. Read each condition carefully. 
- */
- 
-// change the value of `musicians` to test your conditional statements
-// var musicians = 0;
-
-// your code goes here
-
-// if (musicians <= 0) {
-//     console.log("not a group");
-//     } else if (musicians == 1) {
-//         console.log("solo");
-//     } else if (musicians == 2) {
-//         console.log("duet");
-//     } else if (musicians == 3) {
-//         console.log("trio");
-//     } else if (musicians == 4) {
-//         console.log("quartet");
-//     } else {
-//         console.log("this is a large group");
-//     }
-
-
-
-
-/*
- * Programming Quiz: Even or Odd (3-2)
- *
- * Write an if...else statement that prints `even` if the 
- * number is even and prints `odd` if the number is odd.
- *
- * Note - make sure to print only the string "even" or the string "odd"
- */
-
-/*
- * QUIZ REQUIREMENTS
- * 1. Your code should have a variable `number`, and include an `if...else` statement
- * 2. Your conditional should use a strict comparison (`===` or `!==`), and use the modulo ( `%` ) operator
- * 3. Your code should produce the expected output - "even" or "odd" using console.log() method
- */
- 
- 
-// change the value of `number` to test your if...else statement
-// var number = 2;
-
-// if (number % 2 === 0) {
-//     console.log("even");    
-// } else {
-//     console.log("odd");
+// function musica(musicians) {
+//   if (musicians <= 0) {
+//     return "not a group";
+//   } 
+//   if (musicians === 1) {
+//     return "solo";
+//   }
+//   if (musicians === 2) {
+//     return "duet";
+//   } 
+//   if (musicians === 3) {
+//     return "trio";
+//   } 
+//   if (musicians === 4) {
+//     return "quartet";
+//   } 
+//   return "this is a large group";
 // }
+
+// console.log(musica(-2));
+/*
+let musicians = -1
+*/
+// function musica(musicians) {
+//   switch (true) {
+//     case musicians <= 0:
+//       return "not a group"
+//     case musicians === 1:
+//       return "solo"
+//     case musicians === 2:
+//       return "duet"
+//     case musicians === 3:
+//       return "trio"
+//     case musicians === 4:
+//       return "quartet"
+//     default:
+//       return "this is a large group"
+//   }
+// }
+
+// console.log(musica(80))
+/*
+function musica(musicians) {
+  if (musicians <= 0) 
+    return "not a group"
+ 
+  switch(musicians) {
+    case 1:
+      return "solo"
+    case 2:
+      return "duet"
+    case 3:
+      return "trio"
+    case 4:
+      return "quartet"
+    default:
+      return "this is a large group"
+  }
+}
+
+console.log(musica(-1))
+*/
 
 
 
@@ -124,7 +121,11 @@ console.log(x + weapon)
 // var adjective2 = "fun";
 // var adjective3 = "entertaining";
 
-// var madLib = "The Intro to Javascript course is " + adjective1 + ". " + "James and Julia are so " + adjective2 + ". " + "I cannot wait to work through the rest of this " + adjective3 + " content!";
+// var madLib = "The Intro to Javascript course is " + adjective1 + ". James and Julia are so " + adjective2 + ". I cannot wait to work through the rest of this " + adjective3 + " content!";
+
+// var madLib = `The Intro to Javascript course is ${adjective1}. James and Julia are so ${adjective2}. I cannot wait to work through the rest of this ${adjective3} content!`;
+
+
 
 // console.log(madLib);
 
@@ -196,6 +197,9 @@ console.log('$' + total.toFixed(2));
 */
 // var joke = "Why couldn't the shoes go out and play?\nThey were all \"tied\" up!"
 // console.log(joke);
+
+
+//----------------------------------
 
 // 'green'=='blue'
 
