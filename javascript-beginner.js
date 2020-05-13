@@ -1,3 +1,60 @@
+/*
+Using the flowchart below, write the code to represent checking your balance at the ATM. The yellow diamonds represent conditional statements and the blue rectangles with rounded corners represent what should be printed to the console.
+*/
+/*
+ * Programming Quiz - Checking Your Balance (3-5)
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have the variables `balance`, `checkBalance`, `isActive`
+ * 2. Your code should include an `if...else` conditional statement
+ * 3. Your code should produce the expected output
+ * 4. Your code should not be empty
+ * 5. BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED. 
+ */
+
+var balance = 0;
+var checkBalance = true;
+var isActive = false;
+
+if (checkBalance === true && isActive === true && balance > 0) {
+  console.log(`Your balance is $${balance}.`);
+} else if (checkBalance === true && isActive === true && balance === 0 ) {
+  console.log('Your account is empty.');
+} else if (checkBalance === true && isActive === false) {
+  console.log('Your account is no longer active.');
+} else if (checkBalance === true && isActive === true && balance < 0) {
+  console.log('Your balance is negative. Please contact bank.')
+} else {
+  console.log('Thank you. Have a nice day!')
+}
+
+//Udacity version (mejor está)
+if (checkBalance === true) {
+    // Cases when account is active. Now, the balance could be <, =, or > zero
+    if (isActive === true && balance > 0) {
+        console.log("Your balance is $" + balance.toFixed(2) + ".");
+    }
+    else if (isActive === true && balance === 0){
+        console.log("Your account is empty.");
+    } 
+    else if (isActive === true && balance < 0){
+        console.log("Your balance is negative. Please contact bank.");
+    }
+    // Case when account is NOT active
+    else if (isActive === false) {
+        console.log("Your account is no longer active.");
+    }  
+} 
+else {
+  console.log("Thank you. Have a nice day!");
+}
+
+
+
+
+
 // let arr = [1,2,3,4,5]
 
 // // function peps(x) {
@@ -85,24 +142,24 @@ if (room === 'ballroom') {
 }
 */
 
-if (room === 'ballroom' && suspect === "Mr. Kalehoff") {
-  weapon = 'poison';
-  solved = true;
-} else if (room === 'gallery' && suspect === "Ms. Van Cleve") {
-    weapon = 'trophy'; 
-    solved = true;
-} else if (room === 'billiards room' && suspect === "Mrs. Sparr") {
-    weapon = 'pool stick';
-    solved = true;
-} else if (room === 'dining room' && suspect === "Mr. Parkes") {
-    weapon = 'knife'; 
-    solved = true; 
-} else {}
+// if (room === 'ballroom' && suspect === "Mr. Kalehoff") {
+//   weapon = 'poison';
+//   solved = true;
+// } else if (room === 'gallery' && suspect === "Ms. Van Cleve") {
+//     weapon = 'trophy'; 
+//     solved = true;
+// } else if (room === 'billiards room' && suspect === "Mrs. Sparr") {
+//     weapon = 'pool stick';
+//     solved = true;
+// } else if (room === 'dining room' && suspect === "Mr. Parkes") {
+//     weapon = 'knife'; 
+//     solved = true; 
+// } else {}
 
 
-if (solved) {
-  console.log(`${suspect} did it in the ${room} with the ${weapon}!`)
-}
+// if (solved) {
+//   console.log(`${suspect} did it in the ${room} with the ${weapon}!`)
+// }
 
 
 // /* ****************************************** */
