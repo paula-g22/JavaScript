@@ -1,9 +1,153 @@
+// let arr = [1,2,3,4,5]
+
+// // function peps(x) {
+// //   console.log(x)
+// // }
+
+// // //arrow functions
+
+// // const pepsi = (x) => {
+// //   console.log(x)
+// // } //esto es lo mismo q the before function
+
+// function findsEven(arr) {
+//   for (let e of arr)
+//     if (e%2 === 0)
+//       console.log(e)
+// }
+
+// console.log(findsEven(arr))
+
+// /*
+//  * Programming Quiz: Murder Mystery (3-4)
+//  */
+
+// /*
+//  * QUIZ REQUIREMENTS
+//  * 1. Your code should have a variables - `room`, `suspect`, `weapon`, and `solved`
+//  * 2. Your code should include a conditional statement
+//  * 3. The variable `suspect` should use one of the provided values
+//  * 4. The variable `weapon` should be based on the `room`
+//  * 5. Your code should produce the expected output: __________ did it in the __________ with the __________!
+//  * Example: Mr. Parkes did it in the dining room with the knife!
+//  *
+//  * 6. For unmatching combination of the suspect and the room, print nothing on the console
+//  */
+
+// /* ****************************************** */
+// /* TESTING LOGIC */ 
+// // Change the value of `room` and `suspect` to test your code
+
+// // A room can be either of - dining room, gallery, ballroom, or billiards room
+// var room = "billiards room";
+
+// // A suspect can be either of - Mr. Parkes, Ms. Van Cleve, Mrs. Sparr, or Mr. Kalehoff
+// // Test your code by giving matching as well as unmatching names of the suspect
+// var suspect = "Mr. Parkes"; 
+
+// /* ****************************************** */
+
+// /* IMPLEMENTATION LOGIC*/
+
+// Initial values
+var weapon = "";
+var solved = false;
+var room = "dining room";
+var suspect = "Mr. Parkes";
+
+// /*
+// * To help solve this mystery, write a combination of conditional statements that:
+// * 1. sets the value of weapon based on the room and
+// * 2. sets the value of solved to true if the value of room matches the suspect's room
+// */
+
+/*
+if (room === 'ballroom') {
+  weapon = 'poison'; 
+  if (suspect === "Mr. Kalehoff")
+    solved = true;  
+} else if (room === 'gallery') {
+    weapon = 'trophy';
+    if (suspect === "Ms. Van Cleve") {
+      solved = true;
+    }
+} else if (room === 'billiards room') {
+    weapon = 'pool stick';
+    if (suspect === "Mrs. Sparr") {
+      solved = true;
+    }
+} else if (room === 'dining room') {
+    weapon = 'knife'; 
+    if (suspect === "Mr. Parkes") {
+      solved = true;
+    } 
+} else {
+}
+*/
+
+if (room === 'ballroom' && suspect === "Mr. Kalehoff") {
+  weapon = 'poison';
+  solved = true;
+} else if (room === 'gallery' && suspect === "Ms. Van Cleve") {
+    weapon = 'trophy'; 
+    solved = true;
+} else if (room === 'billiards room' && suspect === "Mrs. Sparr") {
+    weapon = 'pool stick';
+    solved = true;
+} else if (room === 'dining room' && suspect === "Mr. Parkes") {
+    weapon = 'knife'; 
+    solved = true; 
+} else {}
+
+
+if (solved) {
+  console.log(`${suspect} did it in the ${room} with the ${weapon}!`)
+}
+
+
+// /* ****************************************** */
+// // The code below will run only when `solved` is true
+// if (solved) {
+// 	console.log(/* your message goes here*/);
+// }
+// /* ****************************************** */
+
+
+
+/*
+ * Programming Quiz: Musical Groups (3-3)
+ */
+/*
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have a variable `musicians`, and include `if...else if...else` conditional statement
+ * 2. Your code should produce the expected output, as mentioned above. Read each condition carefully. 
+ */
+ 
+// change the value of `musicians` to test your conditional statements
+// var musicians = 2;
+
+// your code goes here
+
+// if (musicians <= 0) {
+//     console.log("not a group");
+//     } else if (musicians === 1) {
+//         console.log("solo");
+//     } else if (musicians === 2) {
+//         console.log("duet");
+//     } else if (musicians === 3) {
+//         console.log("trio");
+//     } else if (musicians === 4) {
+//         console.log("quartet");
+//     } else {
+//         console.log("this is a large group");
+//     }
+
 // function musica(musicians) {
 //   if (musicians <= 0) {
 //     return "not a group";
 //   } 
 //   if (musicians === 1) {
-//     return "solo";
+//     return "solo");
 //   }
 //   if (musicians === 2) {
 //     return "duet";
@@ -17,49 +161,36 @@
 //   return "this is a large group";
 // }
 
-// console.log(musica(-2));
-/*
-let musicians = -1
-*/
-// function musica(musicians) {
-//   switch (true) {
-//     case musicians <= 0:
-//       return "not a group"
-//     case musicians === 1:
-//       return "solo"
-//     case musicians === 2:
-//       return "duet"
-//     case musicians === 3:
-//       return "trio"
-//     case musicians === 4:
-//       return "quartet"
-//     default:
-//       return "this is a large group"
-//   }
-// }
+// console.log(musica(2));
 
-// console.log(musica(80))
+// console.log('paunu');
+
+
 /*
-function musica(musicians) {
-  if (musicians <= 0) 
-    return "not a group"
+ * Programming Quiz: Even or Odd (3-2)
+ *
+ * Write an if...else statement that prints `even` if the 
+ * number is even and prints `odd` if the number is odd.
+ *
+ * Note - make sure to print only the string "even" or the string "odd"
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have a variable `number`, and include an `if...else` statement
+ * 2. Your conditional should use a strict comparison (`===` or `!==`), and use the modulo ( `%` ) operator
+ * 3. Your code should produce the expected output - "even" or "odd" using console.log() method
+ */
  
-  switch(musicians) {
-    case 1:
-      return "solo"
-    case 2:
-      return "duet"
-    case 3:
-      return "trio"
-    case 4:
-      return "quartet"
-    default:
-      return "this is a large group"
-  }
-}
+ 
+// change the value of `number` to test your if...else statement
+// var number = 2;
 
-console.log(musica(-1))
-*/
+// if (number % 2 === 0) {
+//     console.log("even");    
+// } else {
+//     console.log("odd");
+// }
 
 
 
@@ -121,11 +252,7 @@ console.log(musica(-1))
 // var adjective2 = "fun";
 // var adjective3 = "entertaining";
 
-// var madLib = "The Intro to Javascript course is " + adjective1 + ". James and Julia are so " + adjective2 + ". I cannot wait to work through the rest of this " + adjective3 + " content!";
-
-// var madLib = `The Intro to Javascript course is ${adjective1}. James and Julia are so ${adjective2}. I cannot wait to work through the rest of this ${adjective3} content!`;
-
-
+// var madLib = "The Intro to Javascript course is " + adjective1 + ". " + "James and Julia are so " + adjective2 + ". " + "I cannot wait to work through the rest of this " + adjective3 + " content!";
 
 // console.log(madLib);
 
@@ -197,9 +324,6 @@ console.log('$' + total.toFixed(2));
 */
 // var joke = "Why couldn't the shoes go out and play?\nThey were all \"tied\" up!"
 // console.log(joke);
-
-
-//----------------------------------
 
 // 'green'=='blue'
 
