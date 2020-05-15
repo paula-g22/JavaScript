@@ -1,4 +1,160 @@
 /*
+ * Programming Quiz: Countdown, Liftoff! (4-3)
+ * 
+ * Using a while loop, print out the countdown output above.
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should include a `while` loop
+ * - Your `while` loop should have a stop condition
+ * - Your code should produce the expected output, as explained above
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+
+
+// your code goes here
+
+/*
+let seconds = 60;
+
+while (seconds >= 0) {
+    if (seconds === 50) {
+        console.log("Orbiter transfers from ground to internal power");
+    } else if (seconds === 31) {
+        console.log("Ground launch sequencer is go for auto sequence start");
+    } else if (seconds === 16) {
+        console.log("Activate launch pad sound suppression system");
+    } else if (seconds === 10) {
+        console.log("Activate main engine hydrogen burnoff system");
+    } else if (seconds === 6) {
+        console.log("Main engine start");
+    } else if (seconds === 0) {
+        console.log("Solid rocket booster ignition and liftoff!")
+    } else {
+        console.log(`T-${seconds} seconds`);
+    }
+    seconds = seconds - 1
+}
+
+//udacity used 'n' instead of seconds which makes more sense
+
+*/
+
+/*
+ * Programming Quiz: 99 Bottles of Juice (4-2)
+ *
+ * Use the following `while` loop to write out the song "99 bottles of juice".
+ * Log the your lyrics to the console.
+ *
+ * Note
+ *   - Each line of the lyrics needs to be logged to the same line.
+ *   - The pluralization of the word "bottle" changes from "2 bottles" to "1 bottle" to "0 bottles".
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `num` with a starting value of `99`
+ * - Your code should include a `while` loop
+ * - Your `while` loop should have a stop condition
+ * - Your code should produce the expected output, as explained above
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+
+
+//var num = 99;
+
+/* // pepe's code below:
+
+while ((num <= 99) && (num >= 1)) {
+    if ((num != 1) && (num != 2)) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    } else if (num === 2) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottle of juice on the wall!`);
+    } else {
+        console.log(`${num} bottle of juice on the wall! ${num} bottle of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    }
+    num = num - 1;
+}
+*/
+
+/*
+while (num >= 1) {
+    if ((num != 1) && (num != 2)) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    } else if (num === 2) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottle of juice on the wall!`);
+    } else {
+        console.log(`${num} bottle of juice on the wall! ${num} bottle of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    }
+    num = num - 1;
+}
+*/
+
+//Udacity answer:
+/*
+var num = 99;
+
+while (num >=1) {
+    // Last iteration. Note occurances of bottle, bottle, bottleS
+    if (num === 1) {
+        console.log(num + " bottle of juice on the wall! "
+                    + num + " bottle of juice! Take one down, pass it around... "
+                    + (num-1) + " bottles of juice on the wall!");
+    }
+    // Second-last iteration. Note occurances of bottleS, bottleS, bottle
+    else if (num === 2){
+        console.log(num + " bottles of juice on the wall! "
+                    + num + " bottles of juice! Take one down, pass it around... "
+                    + (num-1) + " bottle of juice on the wall!");
+    }
+    // All other iterations. Note occurances of bottleS, bottleS, bottleS
+    else {
+        console.log(num + " bottles of juice on the wall! "
+                    + num + " bottles of juice! Take one down, pass it around... "
+                    + (num-1) + " bottles of juice on the wall!");
+    }
+    num = num - 1;
+}
+*/
+
+/*
+ * Programming Quiz: JuliaJames (4-1)
+ */
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `x` with a starting value of `1`
+ * - Your code should include a `while` loop
+ * - Your `while` loop should have a stop condition
+ * - Your code should use a conditional statement
+ * - Your code should increment `x` by `1` each time the loop executes
+ * - Your code should produce the expected output
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+ 
+ /*
+var x = 1;
+
+while (x <= 20) {
+    if ((x % 3 === 0) && (x % 5 === 0)) {
+      console.log("JuliaJames");
+    } else if (x % 3 === 0) {
+      console.log("Julia");
+    } else if (x % 5 === 0) {
+      console.log("James");
+    } else {
+      console.log(x);
+    }
+    x = x + 1;
+}
+*/
+//estaba bien, ask Titi about proper syntax (lo q queda mas lindo)
+
+
+/*
  * Programming Quiz: Back to School (3-9)
  *
  * Write a switch statement to set the average salary of a person based on their type of completed education.
@@ -15,13 +171,14 @@
  */
  
 // change the value of `education` to test your code
-var education = "a Bachelor's degree";
+// var education = "a Bachelor's degree";
 
 // set the value of this based on a person's education
-var salary = 0;
+// var salary = 0;
 
 // your code goes here
 
+/*
 switch (education) {
   case 'no high school diploma':
     salary = 25636;
@@ -46,6 +203,7 @@ switch (education) {
 }
 
 console.log(`In 2015, a person with ${education} earned an average of $${salary.toLocaleString("en-US")}/year.`);
+*/ 
 
 /*
  * Programming Quiz - Navigating the Food Chain (3-8)
