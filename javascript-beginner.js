@@ -1,4 +1,44 @@
 /*
+ * Programming Quiz: Colors of the Rainbow (6-4)
+ *
+ * Use only the splice() method to modify the rainbow variable:
+ *  - remove "Blackberry"
+ *  - add "Yellow" and "Green"
+ *  - add "Purple"
+ */
+
+/*
+var rainbow = ['Red', 'Orange', 'Blackberry', 'Blue'];
+
+rainbow.splice(2, 1, "Yellow", "Green"); 
+rainbow.splice(5, 0, "Purple");
+
+console.log(rainbow);
+*/ 
+
+
+/*
+ * Programming Quiz: The Price is Right (6-3)
+ */
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `prices`
+ * - The variable `prices` should be an array having different values for the 1st, 3rd, and 7th elements
+ * - Your code should print `prices` to the console as an array. Do not iterate over the elements. 
+ */
+
+/*
+ 
+var prices = [1.23, 48.11, 90.11, 8.50, 9.99, 1.00, 1.10, 67.00];
+
+prices[0] = 1.22;
+prices [2] = 49;
+prices [6] = 1.15;
+
+console.log(prices);
+
+*/ 
+/*
  * Programming Quiz: Cry (5-5)
  */
 
@@ -24,6 +64,39 @@ console.log(cry());
  * Programming Quiz: Laugh (5-4)
  */
 
+/*
+ * Programming Quiz: Inline Functions (5-6)
+ */
+ 
+ /*
+ * QUIZ REQUIREMENTS
+ * - Your code should have an `emotions()` function
+ * - Your code should call the `emotions()` function
+ * - Your `emotions()` function call should have an inline function expression passed as the second parameter
+ * - Your function expression should return the expected output
+ */
+
+
+// don't change this code
+// emotions() function definition
+/*
+function emotions(myString, myFunc) {
+    console.log("I am " + myString + ", " + myFunc(2));
+}
+*/ 
+// your code goes here
+// Call the emotions() function with two arguments
+// Argument 1 - "happy" string
+// Argument 2 - an inline function expression
+/*
+emotions("happy", function myFunc(num) {
+    let y = '';
+    for (let x = 1; x <= num; x++) {
+        y += 'ha';
+        }
+    return y + "!";
+    });
+*/ 
 /*
  * QUIZ REQUIREMENTS
  * - Your code should have a variable `laugh`
