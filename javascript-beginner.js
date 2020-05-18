@@ -1,123 +1,188 @@
+/*
+ * Programming Quiz: Cry (5-5)
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `cry`
+ * - Your code should include a named function expression stored in the variable `cry`
+ * - Your code should call the function expression using the variable name, not the function name
+ * - Your function expression should return the expected output
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+
+
+// your code goes here
+/*
+let cry = function cry () {
+    return "boohoo!";
+}
+
+console.log(cry());
+*/
+/*
+ * Programming Quiz: Laugh (5-4)
+ */
+
+/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `laugh`
+ * - Your code should include an anonymous function expression stored in the variable `laugh`
+ * - Your anonymous function expression should take one argument
+ * - Your anonymous function expression should return the correct number of `hahaha`\'s
+ */
+
+/*
+var laugh = function(num) {
+    let y = '';
+    for (let x = 1; x <= num; x++) {
+        y += 'ha';
+    }
+    return y + "!";
+}
+
+console.log(laugh(10));
+*/
+/*
+// function expression catSays
+var catSays = function(max) {
+  var catMessage = "";
+  for (var i = 0; i < max; i++) {
+    catMessage += "meow ";
+  }
+  return catMessage;
+};
+
+// function declaration helloCat accepting a callback
+function helloCat(callbackFunc) {
+  return "Hello " + callbackFunc(3);
+}
+
+// pass in catSays as a callback function
+helloCat(catSays);
+*/
  /*
  * QUIZ REQUIREMENTS
  * - Your code should have a `buildTriangle()` function
  * - Your `buildTriangle()` function should take one argument (or you can say parameter)
  * - Your `laugh()` function should build the triangle as describe above
- */
+ 
 
 
 // creates a line of * for a given length
 function makeLine(length) {
-  var line = "";
-  for (var j = 1; j <= length; j++) {
-      line += "* ";
-  }
-  return line + "\n";
+    var line = "";
+    for (var j = 1; j <= length; j++) {
+        line += "* ";
+    }
+    return line + "\n";
 }
 
 // your code goes here.  Make sure you call makeLine() in your own code.
 
 function buildTriangle(length) {
-var y = '';
-for (let x = 1; x <= length; x++) {
-  y += makeLine(x);
-}
-return y
+  var y = '';
+  for (let x = 1; x <= length; x++) {
+    y += makeLine(x);
+  }
+  return y
 }
 
 
 // test your code by uncommenting the following line
 
 console.log(buildTriangle(10));
+
+*/
 /*
 function isThisWorking(input) {
-console.log("Printing: isThisWorking was called and " + input + " was passed in as an argument.");
-return "Returning: I am returning this string!";
+  console.log("Printing: isThisWorking was called and " + input + " was passed in as an argument.");
+  return "Returning: I am returning this string!";
 }
 
 isThisWorking('peps');
 
 function isThisWorking(input) {
-console.log("Printing: isThisWorking was called and " + input + " was passed in as an argument.");
+  console.log("Printing: isThisWorking was called and " + input + " was passed in as an argument.");
 }
 
 isThisWorking(3);
 */
 /*
-* Programming Quiz: Laugh it Off 2 (5-2)
-*
-* Write a function called `laugh` with a parameter named `num` that represents the number of "ha"s to return.
-*
-* Note:
-*  - make sure your the final character is an exclamation mark ("!")
-*  - make sure that your function produces the correct results when it is called multiple times
-*/
+ * Programming Quiz: Laugh it Off 2 (5-2)
+ *
+ * Write a function called `laugh` with a parameter named `num` that represents the number of "ha"s to return.
+ *
+ * Note:
+ *  - make sure your the final character is an exclamation mark ("!")
+ *  - make sure that your function produces the correct results when it is called multiple times
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* - Your code should have a `laugh()` function
-* - Your `laugh()` function should have one parameter named `num`
-* - Your `laugh()` function should return the correct number of laughs
-*/
+ * QUIZ REQUIREMENTS
+ * - Your code should have a `laugh()` function
+ * - Your `laugh()` function should have one parameter named `num`
+ * - Your `laugh()` function should return the correct number of laughs
+ */
 
 /* 
 function laugh(num) {
-  let haHolder = '';
-  for (let x = 1; x <= num; x++) {
-      haHolder += 'ha';
-   }
-  return haHolder + "!";
-}
+    let haHolder = '';
+    for (let x = 1; x <= num; x++) {
+        haHolder += 'ha';
+     }
+    return haHolder + "!";
+ }
 
 console.log(laugh(5));
 */
 
 /*
-* Programming Quiz: Find my Seat (4-8)
-* 
-* Write a nested for loop to print out all of the different seat combinations in the theater.
-* The first row-seat combination should be 0-0 
-* The last row-seat combination will be 25-99
-* 
-* Things to note: 
-*  - the row and seat numbers start at 0, not 1
-*  - the highest seat number is 99, not 100
-*/
+ * Programming Quiz: Find my Seat (4-8)
+ * 
+ * Write a nested for loop to print out all of the different seat combinations in the theater.
+ * The first row-seat combination should be 0-0 
+ * The last row-seat combination will be 25-99
+ * 
+ * Things to note: 
+ *  - the row and seat numbers start at 0, not 1
+ *  - the highest seat number is 99, not 100
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* - Your code should use a nested `for` loop'
-* - Your code should produce the expected output, as explained above
-*/
-
+ * QUIZ REQUIREMENTS
+ * - Your code should use a nested `for` loop'
+ * - Your code should produce the expected output, as explained above
+ */
+ 
 // Write your code here
 /*
 for (let x = 0; x <= 25; x++) {
-  for (let y = 0; y <= 99; y++) {
-      console.log(x+"-"+y)
-  }
+    for (let y = 0; y <= 99; y++) {
+        console.log(x+"-"+y)
+    }
 }
 
 for (var x = 0; x < 5; x = x + 1) {
-for (var y = 0; y < 3; y = y + 1) {
-  console.log(x + "," + y);
-}
+  for (var y = 0; y < 3; y = y + 1) {
+    console.log(x + "," + y);
+  }
 }
 */
 /*
-* Programming Quiz: Countdown, Liftoff! (4-3)
-* 
-* Using a while loop, print out the countdown output above.
-*/
+ * Programming Quiz: Countdown, Liftoff! (4-3)
+ * 
+ * Using a while loop, print out the countdown output above.
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* - Your code should include a `while` loop
-* - Your `while` loop should have a stop condition
-* - Your code should produce the expected output, as explained above
-* - Your code should not be empty
-* - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
-*/
+ * QUIZ REQUIREMENTS
+ * - Your code should include a `while` loop
+ * - Your `while` loop should have a stop condition
+ * - Your code should produce the expected output, as explained above
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
 
 
 // your code goes here
@@ -126,22 +191,22 @@ for (var y = 0; y < 3; y = y + 1) {
 let seconds = 60;
 
 while (seconds >= 0) {
-  if (seconds === 50) {
-      console.log("Orbiter transfers from ground to internal power");
-  } else if (seconds === 31) {
-      console.log("Ground launch sequencer is go for auto sequence start");
-  } else if (seconds === 16) {
-      console.log("Activate launch pad sound suppression system");
-  } else if (seconds === 10) {
-      console.log("Activate main engine hydrogen burnoff system");
-  } else if (seconds === 6) {
-      console.log("Main engine start");
-  } else if (seconds === 0) {
-      console.log("Solid rocket booster ignition and liftoff!")
-  } else {
-      console.log(`T-${seconds} seconds`);
-  }
-  seconds = seconds - 1
+    if (seconds === 50) {
+        console.log("Orbiter transfers from ground to internal power");
+    } else if (seconds === 31) {
+        console.log("Ground launch sequencer is go for auto sequence start");
+    } else if (seconds === 16) {
+        console.log("Activate launch pad sound suppression system");
+    } else if (seconds === 10) {
+        console.log("Activate main engine hydrogen burnoff system");
+    } else if (seconds === 6) {
+        console.log("Main engine start");
+    } else if (seconds === 0) {
+        console.log("Solid rocket booster ignition and liftoff!")
+    } else {
+        console.log(`T-${seconds} seconds`);
+    }
+    seconds = seconds - 1
 }
 
 //udacity used 'n' instead of seconds which makes more sense
@@ -149,25 +214,25 @@ while (seconds >= 0) {
 */
 
 /*
-* Programming Quiz: 99 Bottles of Juice (4-2)
-*
-* Use the following `while` loop to write out the song "99 bottles of juice".
-* Log the your lyrics to the console.
-*
-* Note
-*   - Each line of the lyrics needs to be logged to the same line.
-*   - The pluralization of the word "bottle" changes from "2 bottles" to "1 bottle" to "0 bottles".
-*/
+ * Programming Quiz: 99 Bottles of Juice (4-2)
+ *
+ * Use the following `while` loop to write out the song "99 bottles of juice".
+ * Log the your lyrics to the console.
+ *
+ * Note
+ *   - Each line of the lyrics needs to be logged to the same line.
+ *   - The pluralization of the word "bottle" changes from "2 bottles" to "1 bottle" to "0 bottles".
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* - Your code should have a variable `num` with a starting value of `99`
-* - Your code should include a `while` loop
-* - Your `while` loop should have a stop condition
-* - Your code should produce the expected output, as explained above
-* - Your code should not be empty
-* - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
-*/
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `num` with a starting value of `99`
+ * - Your code should include a `while` loop
+ * - Your `while` loop should have a stop condition
+ * - Your code should produce the expected output, as explained above
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
 
 
 //var num = 99;
@@ -175,27 +240,27 @@ while (seconds >= 0) {
 /* // pepe's code below:
 
 while ((num <= 99) && (num >= 1)) {
-  if ((num != 1) && (num != 2)) {
-      console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
-  } else if (num === 2) {
-      console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottle of juice on the wall!`);
-  } else {
-      console.log(`${num} bottle of juice on the wall! ${num} bottle of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
-  }
-  num = num - 1;
+    if ((num != 1) && (num != 2)) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    } else if (num === 2) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottle of juice on the wall!`);
+    } else {
+        console.log(`${num} bottle of juice on the wall! ${num} bottle of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    }
+    num = num - 1;
 }
 */
 
 /*
 while (num >= 1) {
-  if ((num != 1) && (num != 2)) {
-      console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
-  } else if (num === 2) {
-      console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottle of juice on the wall!`);
-  } else {
-      console.log(`${num} bottle of juice on the wall! ${num} bottle of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
-  }
-  num = num - 1;
+    if ((num != 1) && (num != 2)) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    } else if (num === 2) {
+        console.log(`${num} bottles of juice on the wall! ${num} bottles of juice! Take one down, pass it around... ${num -1} bottle of juice on the wall!`);
+    } else {
+        console.log(`${num} bottle of juice on the wall! ${num} bottle of juice! Take one down, pass it around... ${num -1} bottles of juice on the wall!`);
+    }
+    num = num - 1;
 }
 */
 
@@ -204,78 +269,78 @@ while (num >= 1) {
 var num = 99;
 
 while (num >=1) {
-  // Last iteration. Note occurances of bottle, bottle, bottleS
-  if (num === 1) {
-      console.log(num + " bottle of juice on the wall! "
-                  + num + " bottle of juice! Take one down, pass it around... "
-                  + (num-1) + " bottles of juice on the wall!");
-  }
-  // Second-last iteration. Note occurances of bottleS, bottleS, bottle
-  else if (num === 2){
-      console.log(num + " bottles of juice on the wall! "
-                  + num + " bottles of juice! Take one down, pass it around... "
-                  + (num-1) + " bottle of juice on the wall!");
-  }
-  // All other iterations. Note occurances of bottleS, bottleS, bottleS
-  else {
-      console.log(num + " bottles of juice on the wall! "
-                  + num + " bottles of juice! Take one down, pass it around... "
-                  + (num-1) + " bottles of juice on the wall!");
-  }
-  num = num - 1;
+    // Last iteration. Note occurances of bottle, bottle, bottleS
+    if (num === 1) {
+        console.log(num + " bottle of juice on the wall! "
+                    + num + " bottle of juice! Take one down, pass it around... "
+                    + (num-1) + " bottles of juice on the wall!");
+    }
+    // Second-last iteration. Note occurances of bottleS, bottleS, bottle
+    else if (num === 2){
+        console.log(num + " bottles of juice on the wall! "
+                    + num + " bottles of juice! Take one down, pass it around... "
+                    + (num-1) + " bottle of juice on the wall!");
+    }
+    // All other iterations. Note occurances of bottleS, bottleS, bottleS
+    else {
+        console.log(num + " bottles of juice on the wall! "
+                    + num + " bottles of juice! Take one down, pass it around... "
+                    + (num-1) + " bottles of juice on the wall!");
+    }
+    num = num - 1;
 }
 */
 
 /*
-* Programming Quiz: JuliaJames (4-1)
-*/
+ * Programming Quiz: JuliaJames (4-1)
+ */
 /*
-* QUIZ REQUIREMENTS
-* - Your code should have a variable `x` with a starting value of `1`
-* - Your code should include a `while` loop
-* - Your `while` loop should have a stop condition
-* - Your code should use a conditional statement
-* - Your code should increment `x` by `1` each time the loop executes
-* - Your code should produce the expected output
-* - Your code should not be empty
-* - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
-*/
-
-/*
+ * QUIZ REQUIREMENTS
+ * - Your code should have a variable `x` with a starting value of `1`
+ * - Your code should include a `while` loop
+ * - Your `while` loop should have a stop condition
+ * - Your code should use a conditional statement
+ * - Your code should increment `x` by `1` each time the loop executes
+ * - Your code should produce the expected output
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+ 
+ /*
 var x = 1;
 
 while (x <= 20) {
-  if ((x % 3 === 0) && (x % 5 === 0)) {
-    console.log("JuliaJames");
-  } else if (x % 3 === 0) {
-    console.log("Julia");
-  } else if (x % 5 === 0) {
-    console.log("James");
-  } else {
-    console.log(x);
-  }
-  x = x + 1;
+    if ((x % 3 === 0) && (x % 5 === 0)) {
+      console.log("JuliaJames");
+    } else if (x % 3 === 0) {
+      console.log("Julia");
+    } else if (x % 5 === 0) {
+      console.log("James");
+    } else {
+      console.log(x);
+    }
+    x = x + 1;
 }
 */
 //estaba bien, ask Titi about proper syntax (lo q queda mas lindo)
 
 
 /*
-* Programming Quiz: Back to School (3-9)
-*
-* Write a switch statement to set the average salary of a person based on their type of completed education.
-*
-*/
+ * Programming Quiz: Back to School (3-9)
+ *
+ * Write a switch statement to set the average salary of a person based on their type of completed education.
+ *
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* - Your code should have the variables `education`, and `salary`
-* - Your code should include a switch statement
-* - Your code should produce the expected output
-* - Your code should not be empty
-* - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
-*/
-
+ * QUIZ REQUIREMENTS
+ * - Your code should have the variables `education`, and `salary`
+ * - Your code should include a switch statement
+ * - Your code should produce the expected output
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+ 
 // change the value of `education` to test your code
 // var education = "a Bachelor's degree";
 
@@ -286,66 +351,66 @@ while (x <= 20) {
 
 /*
 switch (education) {
-case 'no high school diploma':
-  salary = 25636;
-  break;
-case 'a high school diploma':
-  salary = 35256;
-  break;
-case "an Associate's degree":
-  salary = 41496;
-  break;
-case "a Bachelor's degree":
-  salary = 59124;
-  break;
-case "a Master's degree":
-  salary = 69732;
-  break;
-case "a Professional degree":
-  salary = 89960;
-  break;
-case "a Doctoral degree":
-  salary = 84396;
+  case 'no high school diploma':
+    salary = 25636;
+    break;
+  case 'a high school diploma':
+    salary = 35256;
+    break;
+  case "an Associate's degree":
+    salary = 41496;
+    break;
+  case "a Bachelor's degree":
+    salary = 59124;
+    break;
+  case "a Master's degree":
+    salary = 69732;
+    break;
+  case "a Professional degree":
+    salary = 89960;
+    break;
+  case "a Doctoral degree":
+    salary = 84396;
 }
 
 console.log(`In 2015, a person with ${education} earned an average of $${salary.toLocaleString("en-US")}/year.`);
 */ 
 
 /*
-* Programming Quiz - Navigating the Food Chain (3-8)
-*
-* Use a series of ternary operator to set the category to one of the following:
-*   - "herbivore" if an animal eats plants
-*   - "carnivore" if an animal eats animals
-*   - "omnivore" if an animal eats plants and animals
-*   - undefined if an animal doesn't eat plants or animals
-*
-* Notes
-*   - use the variables `eatsPlants` and `eatsAnimals` in your ternary expressions
-*   - `if` statements aren't allowed ;-)
-*/
+ * Programming Quiz - Navigating the Food Chain (3-8)
+ *
+ * Use a series of ternary operator to set the category to one of the following:
+ *   - "herbivore" if an animal eats plants
+ *   - "carnivore" if an animal eats animals
+ *   - "omnivore" if an animal eats plants and animals
+ *   - undefined if an animal doesn't eat plants or animals
+ *
+ * Notes
+ *   - use the variables `eatsPlants` and `eatsAnimals` in your ternary expressions
+ *   - `if` statements aren't allowed ;-)
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* - Your code should have the variables `eatsPlants`, `eatsAnimals`
-* - Your code should include ternary statements. Do not use if....else statement. 
-* - Your code should produce the expected output
-* - Your code should not be empty
-* - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
-*/
-
+ * QUIZ REQUIREMENTS
+ * - Your code should have the variables `eatsPlants`, `eatsAnimals`
+ * - Your code should include ternary statements. Do not use if....else statement. 
+ * - Your code should produce the expected output
+ * - Your code should not be empty
+ * - BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED.
+ */
+ 
 // change the values of `eatsPlants` and `eatsAnimals` to test your code
 /*
 var eatsPlants = true;
 var eatsAnimals = true;
 */
 /*
-* Test your code agaist the followig possible input/output combinations of (`eatsPlants`, `eatsAnimals`, expected output):
-* - (true, true, omnivore)
-* - (false, true, carnivore)
-* - (true, false, herbivore)
-* - (false, false, undefined)
-*/
+ * Test your code agaist the followig possible input/output combinations of (`eatsPlants`, `eatsAnimals`, expected output):
+ * - (true, true, omnivore)
+ * - (false, true, carnivore)
+ * - (true, false, herbivore)
+ * - (false, false, undefined)
+ */
 
 /*
 var category = eatsPlants ? (eatsAnimals ? 'omnivore' : 'herbivore') : (eatsAnimals ? 'carnivore' : 'undefined');
@@ -365,49 +430,49 @@ The function needs to return true if the color is available or false if the colo
 /*
 function getColor(selection)
 {
-switch(selection){
-    case 'RED':
-    case 'Red':
-    case 'red':
-    case 'GREEN':
-    case 'Green':
-    case 'green':
-    case 'BLUE':
-    case 'Blue':
-    case 'blue':
-      return true; 
-      //break; //peps me explicas porque hay q break aca
-    default :
-      return false;//return false because the user pick a unavailable color
-      //break;               
-}
+	switch(selection){
+	    case 'RED':
+		  case 'Red':
+		  case 'red':
+		  case 'GREEN':
+		  case 'Green':
+		  case 'green':
+		  case 'BLUE':
+		  case 'Blue':
+		  case 'blue':
+		    return true; 
+		    //break; //peps me explicas porque hay q break aca
+	    default :
+	    	return false;//return false because the user pick a unavailable color
+	      //break;               
+	}
 }
 
 console.log(getColor('yellow'))
 */
 
 /*
-* Programming Quiz: What do I Wear? (3-7)
-*
-* Using if/else statements, create a series of logical expressions that logs the size of a t-shirt based on the measurements of:
-*   - shirtWidth
-*   - shirtLength
-*   - shirtSleeve
-*
-* Use the chart above to print out one of the following correct values:
-*   - S, M, L, XL, 2XL, or 3XL
-*/
+ * Programming Quiz: What do I Wear? (3-7)
+ *
+ * Using if/else statements, create a series of logical expressions that logs the size of a t-shirt based on the measurements of:
+ *   - shirtWidth
+ *   - shirtLength
+ *   - shirtSleeve
+ *
+ * Use the chart above to print out one of the following correct values:
+ *   - S, M, L, XL, 2XL, or 3XL
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have the variables `shirtWidth`, `shirtLength`, and `shirtSleeve`
-* 2. Your code should include an `if...else` conditional statement
-* 3. Your code should use logical expressions
-* 4. Your code should produce the expected output
-* 6. Your code should not be empty
-* 7. BE CAREFUL ABOUT THE EXACT CHARACTERS TO BE PRINTED.
-*/
-
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have the variables `shirtWidth`, `shirtLength`, and `shirtSleeve`
+ * 2. Your code should include an `if...else` conditional statement
+ * 3. Your code should use logical expressions
+ * 4. Your code should produce the expected output
+ * 6. Your code should not be empty
+ * 7. BE CAREFUL ABOUT THE EXACT CHARACTERS TO BE PRINTED.
+ */
+ 
 
 
 // change the values of `shirtWidth`, `shirtLength`, and `shirtSleeve` to test your code
@@ -417,16 +482,16 @@ var shirtLength = 29;
 var shirtSleeve = 8.47;
 */
 /*
-* To gain confidence, check your code for the following combination of [shirtWidth, shirtLength, shirtSleeve, expectedSize]:
-* [18, 28, 8.13, 'S']
-* [19.99, 28.99, 8.379, 'S']
-* [20, 29, 8.38, 'M']
-* [22, 30, 8.63, 'L']
-* [24, 31, 8.88, 'XL']
-* [26, 33, 9.63, '2XL']
-* [27.99, 33.99, 10.129, '2XL']
-* [28, 34, 10.13, '3XL']
-* [18, 29, 8.47, 'NA']
+ * To gain confidence, check your code for the following combination of [shirtWidth, shirtLength, shirtSleeve, expectedSize]:
+ * [18, 28, 8.13, 'S']
+ * [19.99, 28.99, 8.379, 'S']
+ * [20, 29, 8.38, 'M']
+ * [22, 30, 8.63, 'L']
+ * [24, 31, 8.88, 'XL']
+ * [26, 33, 9.63, '2XL']
+ * [27.99, 33.99, 10.129, '2XL']
+ * [28, 34, 10.13, '3XL']
+ * [18, 29, 8.47, 'NA']
 */
 
 // WRITE YOUR CODE HERE
@@ -434,69 +499,69 @@ var shirtSleeve = 8.47;
 /*
 
 if ((shirtWidth >= 18) && (shirtWidth < 20) && (shirtLength >= 28) && (shirtLength < 29) && (shirtSleeve >= 8.13) && (shirtSleeve < 8.38)) {
-console.log('S');
+  console.log('S');
 } 
-else if ((shirtWidth >= 20) && (shirtWidth < 22) && (shirtLength === 29) && (shirtLength < 30) && (shirtSleeve === 8.38) && (shirtSleeve < 8.63)) {
-  console.log('M');
-}
-else if ((shirtWidth >= 22) && (shirtWidth < 24) && (shirtLength >= 30) && (shirtLength < 31) && (shirtSleeve >= 8.63) && (shirtSleeve < 8.88)) {
-  console.log('L');
-}
-else if ((shirtWidth >= 24) && (shirtWidth < 26) && (shirtLength >= 31) && (shirtLength < 33) && (shirtSleeve >= 8.88) && (shirtSleeve < 9.63)) {
-  console.log('XL');
-}
-else if ((shirtWidth >= 26) && (shirtWidth < 28) && (shirtLength >= 33) && (shirtLength < 34) && (shirtSleeve >= 9.63) && (shirtSleeve < 10.13)) {
-  console.log('2XL');
-}
-else if ((shirtWidth >= 28) && (shirtLength >= 34) && (shirtSleeve >= 10.13)) {
-  console.log('3XL');
-}
-else {
-  console.log('NA')
-}
+  else if ((shirtWidth >= 20) && (shirtWidth < 22) && (shirtLength === 29) && (shirtLength < 30) && (shirtSleeve === 8.38) && (shirtSleeve < 8.63)) {
+    console.log('M');
+  }
+  else if ((shirtWidth >= 22) && (shirtWidth < 24) && (shirtLength >= 30) && (shirtLength < 31) && (shirtSleeve >= 8.63) && (shirtSleeve < 8.88)) {
+    console.log('L');
+  }
+  else if ((shirtWidth >= 24) && (shirtWidth < 26) && (shirtLength >= 31) && (shirtLength < 33) && (shirtSleeve >= 8.88) && (shirtSleeve < 9.63)) {
+    console.log('XL');
+  }
+  else if ((shirtWidth >= 26) && (shirtWidth < 28) && (shirtLength >= 33) && (shirtLength < 34) && (shirtSleeve >= 9.63) && (shirtSleeve < 10.13)) {
+    console.log('2XL');
+  }
+  else if ((shirtWidth >= 28) && (shirtLength >= 34) && (shirtSleeve >= 10.13)) {
+    console.log('3XL');
+  }
+  else {
+    console.log('NA')
+  }
 
 */
 
 /*
-* Programming Quiz: Ice Cream (3-6)
-*
-* Write a single if statement that logs out the message:
-* 
-* "I'd like two scoops of __________ ice cream in a __________ with __________."
-* 
-* ...only if:
-*   - flavor is "vanilla" or "chocolate"
-*   - vessel is "cone" or "bowl"
-*   - toppings is "sprinkles" or "peanuts"
-*
-* We're only testing the if statement and your boolean operators. 
-* It's okay if the output string doesn't match exactly.
-*/
+ * Programming Quiz: Ice Cream (3-6)
+ *
+ * Write a single if statement that logs out the message:
+ * 
+ * "I'd like two scoops of __________ ice cream in a __________ with __________."
+ * 
+ * ...only if:
+ *   - flavor is "vanilla" or "chocolate"
+ *   - vessel is "cone" or "bowl"
+ *   - toppings is "sprinkles" or "peanuts"
+ *
+ * We're only testing the if statement and your boolean operators. 
+ * It's okay if the output string doesn't match exactly.
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have the variables `flavor`, `vessel`, and `toppings`
-* 2. Your code should have an `if` statement
-* 3. Your code should use logical expressions
-* 4. Your code should work with 
-*  - `flavor=vanilla`, `vessel=cone`, and `toppings=sprinkles`
-*  - `flavor=vanilla`, `vessel=cone`, and `toppings=peanuts`
-*  - `flavor=vanilla`, `vessel=bowl`, and `toppings=sprinkles`
-*  - `flavor=vanilla`, `vessel=bowl`, and `toppings=peanuts`
-* 
-*  - `flavor=chocolate`, `vessel=cone`, and `toppings=sprinkles`
-*  - `flavor=chocolate`, `vessel=cone`, and `toppings=peanuts`
-*  - `flavor=chocolate`, `vessel=bowl`, and `toppings=sprinkles`
-*  - `flavor=chocolate`, `vessel=bowl`, and `toppings=peanuts`
-*   
-* 5. Your code should NOT log (print) anything when 
-*  - the flavor is something other than "vanilla" or "chocolate"
-*  - the vessel is something other than "cone" or "bowl"
-*  - the toppings is something other than "sprinkles" or "peanuts"
-* 
-* 6. Your code should not be empty
-*/
-
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have the variables `flavor`, `vessel`, and `toppings`
+ * 2. Your code should have an `if` statement
+ * 3. Your code should use logical expressions
+ * 4. Your code should work with 
+ *  - `flavor=vanilla`, `vessel=cone`, and `toppings=sprinkles`
+ *  - `flavor=vanilla`, `vessel=cone`, and `toppings=peanuts`
+ *  - `flavor=vanilla`, `vessel=bowl`, and `toppings=sprinkles`
+ *  - `flavor=vanilla`, `vessel=bowl`, and `toppings=peanuts`
+ * 
+ *  - `flavor=chocolate`, `vessel=cone`, and `toppings=sprinkles`
+ *  - `flavor=chocolate`, `vessel=cone`, and `toppings=peanuts`
+ *  - `flavor=chocolate`, `vessel=bowl`, and `toppings=sprinkles`
+ *  - `flavor=chocolate`, `vessel=bowl`, and `toppings=peanuts`
+ *   
+ * 5. Your code should NOT log (print) anything when 
+ *  - the flavor is something other than "vanilla" or "chocolate"
+ *  - the vessel is something other than "cone" or "bowl"
+ *  - the toppings is something other than "sprinkles" or "peanuts"
+ * 
+ * 6. Your code should not be empty
+ */
+ 
 // change the values of `flavor`, `vessel`, and `toppings` to test your code
 /*
 var flavor = "vanilla";
@@ -516,8 +581,8 @@ var toppings = "peanuts";
 
 /*
 if ((flavor === 'vanilla' || flavor === 'chocolate') && (vessel === 'cone' || vessel === 'bowl') && (toppings === 'sprinkles' || toppings === 'peanuts')) {
-  console.log(`I'd like two scoops of ${flavor} ice cream in a ${vessel} with ${toppings}.`)
-}
+    console.log(`I'd like two scoops of ${flavor} ice cream in a ${vessel} with ${toppings}.`)
+  }
 */
 
 
@@ -526,17 +591,17 @@ if ((flavor === 'vanilla' || flavor === 'chocolate') && (vessel === 'cone' || ve
 Using the flowchart below, write the code to represent checking your balance at the ATM. The yellow diamonds represent conditional statements and the blue rectangles with rounded corners represent what should be printed to the console.
 */
 /*
-* Programming Quiz - Checking Your Balance (3-5)
-*/
+ * Programming Quiz - Checking Your Balance (3-5)
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have the variables `balance`, `checkBalance`, `isActive`
-* 2. Your code should include an `if...else` conditional statement
-* 3. Your code should produce the expected output
-* 4. Your code should not be empty
-* 5. BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED. 
-*/
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have the variables `balance`, `checkBalance`, `isActive`
+ * 2. Your code should include an `if...else` conditional statement
+ * 3. Your code should produce the expected output
+ * 4. Your code should not be empty
+ * 5. BE CAREFUL ABOUT THE PUNCTUATION AND THE EXACT WORDS TO BE PRINTED. 
+ */
 
 /*
 var balance = 0;
@@ -544,36 +609,36 @@ var checkBalance = true;
 var isActive = false;
 
 if (checkBalance === true && isActive === true && balance > 0) {
-console.log(`Your balance is $${balance}.`);
+  console.log(`Your balance is $${balance}.`);
 } else if (checkBalance === true && isActive === true && balance === 0 ) {
-console.log('Your account is empty.');
+  console.log('Your account is empty.');
 } else if (checkBalance === true && isActive === false) {
-console.log('Your account is no longer active.');
+  console.log('Your account is no longer active.');
 } else if (checkBalance === true && isActive === true && balance < 0) {
-console.log('Your balance is negative. Please contact bank.')
+  console.log('Your balance is negative. Please contact bank.')
 } else {
-console.log('Thank you. Have a nice day!')
+  console.log('Thank you. Have a nice day!')
 }
 
 //Udacity version (mejor está)
 if (checkBalance === true) {
-  // Cases when account is active. Now, the balance could be <, =, or > zero
-  if (isActive === true && balance > 0) {
-      console.log("Your balance is $" + balance.toFixed(2) + ".");
-  }
-  else if (isActive === true && balance === 0){
-      console.log("Your account is empty.");
-  } 
-  else if (isActive === true && balance < 0){
-      console.log("Your balance is negative. Please contact bank.");
-  }
-  // Case when account is NOT active
-  else if (isActive === false) {
-      console.log("Your account is no longer active.");
-  }  
+    // Cases when account is active. Now, the balance could be <, =, or > zero
+    if (isActive === true && balance > 0) {
+        console.log("Your balance is $" + balance.toFixed(2) + ".");
+    }
+    else if (isActive === true && balance === 0){
+        console.log("Your account is empty.");
+    } 
+    else if (isActive === true && balance < 0){
+        console.log("Your balance is negative. Please contact bank.");
+    }
+    // Case when account is NOT active
+    else if (isActive === false) {
+        console.log("Your account is no longer active.");
+    }  
 } 
 else {
-console.log("Thank you. Have a nice day!");
+  console.log("Thank you. Have a nice day!");
 }
 */
 
@@ -646,24 +711,24 @@ var suspect = "Mr. Parkes";
 
 /*
 if (room === 'ballroom') {
-weapon = 'poison'; 
-if (suspect === "Mr. Kalehoff")
-  solved = true;  
+  weapon = 'poison'; 
+  if (suspect === "Mr. Kalehoff")
+    solved = true;  
 } else if (room === 'gallery') {
-  weapon = 'trophy';
-  if (suspect === "Ms. Van Cleve") {
-    solved = true;
-  }
+    weapon = 'trophy';
+    if (suspect === "Ms. Van Cleve") {
+      solved = true;
+    }
 } else if (room === 'billiards room') {
-  weapon = 'pool stick';
-  if (suspect === "Mrs. Sparr") {
-    solved = true;
-  }
+    weapon = 'pool stick';
+    if (suspect === "Mrs. Sparr") {
+      solved = true;
+    }
 } else if (room === 'dining room') {
-  weapon = 'knife'; 
-  if (suspect === "Mr. Parkes") {
-    solved = true;
-  } 
+    weapon = 'knife'; 
+    if (suspect === "Mr. Parkes") {
+      solved = true;
+    } 
 } else {
 }
 */
@@ -698,14 +763,14 @@ if (suspect === "Mr. Kalehoff")
 
 
 /*
-* Programming Quiz: Musical Groups (3-3)
-*/
+ * Programming Quiz: Musical Groups (3-3)
+ */
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have a variable `musicians`, and include `if...else if...else` conditional statement
-* 2. Your code should produce the expected output, as mentioned above. Read each condition carefully. 
-*/
-
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have a variable `musicians`, and include `if...else if...else` conditional statement
+ * 2. Your code should produce the expected output, as mentioned above. Read each condition carefully. 
+ */
+ 
 // change the value of `musicians` to test your conditional statements
 // var musicians = 2;
 
@@ -750,22 +815,22 @@ if (suspect === "Mr. Kalehoff")
 
 
 /*
-* Programming Quiz: Even or Odd (3-2)
-*
-* Write an if...else statement that prints `even` if the 
-* number is even and prints `odd` if the number is odd.
-*
-* Note - make sure to print only the string "even" or the string "odd"
-*/
+ * Programming Quiz: Even or Odd (3-2)
+ *
+ * Write an if...else statement that prints `even` if the 
+ * number is even and prints `odd` if the number is odd.
+ *
+ * Note - make sure to print only the string "even" or the string "odd"
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have a variable `number`, and include an `if...else` statement
-* 2. Your conditional should use a strict comparison (`===` or `!==`), and use the modulo ( `%` ) operator
-* 3. Your code should produce the expected output - "even" or "odd" using console.log() method
-*/
-
-
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have a variable `number`, and include an `if...else` statement
+ * 2. Your conditional should use a strict comparison (`===` or `!==`), and use the modulo ( `%` ) operator
+ * 3. Your code should produce the expected output - "even" or "odd" using console.log() method
+ */
+ 
+ 
 // change the value of `number` to test your if...else statement
 // var number = 2;
 
@@ -778,33 +843,33 @@ if (suspect === "Mr. Kalehoff")
 
 
 /*
-* Programming Quiz: One Awesome Message (2-12)
-*/
+ * Programming Quiz: One Awesome Message (2-12)
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* 1. Create the following variables:
-*     - firstName
-*     - interest
-*     - hobby
-*
-* 2. Create `awesomeMessage` variable, and set it to a message using string concatenation and the variables above. The `awesomeMessage` variable should use `firstName`, `interest`, and `hobby`
-*
-* 3. The `awesomeMessage` variable should have the correct format, as shown below:
-* "Hi, my name is _____. I love ______. In my spare time, I like to ______."
-*
-* 4. Print `awesomeMessage` variable to the console using log() method
-*/
-
-/*
-* Example:
-* - Assuming, firstName would have been assigned to "Julia",
-*   interest to "cats", and hobby to "play video games" to produce the following message:
-* 
-*   Hi, my name is Julia. I love cats. In my spare time, I like to play video games.
-*
-* - Be sure to include spaces and periods where necessary!
-*/
+ * QUIZ REQUIREMENTS
+ * 1. Create the following variables:
+ *     - firstName
+ *     - interest
+ *     - hobby
+ *
+ * 2. Create `awesomeMessage` variable, and set it to a message using string concatenation and the variables above. The `awesomeMessage` variable should use `firstName`, `interest`, and `hobby`
+ *
+ * 3. The `awesomeMessage` variable should have the correct format, as shown below:
+ * "Hi, my name is _____. I love ______. In my spare time, I like to ______."
+ *
+ * 4. Print `awesomeMessage` variable to the console using log() method
+ */
+ 
+ /*
+ * Example:
+ * - Assuming, firstName would have been assigned to "Julia",
+ *   interest to "cats", and hobby to "play video games" to produce the following message:
+ * 
+ *   Hi, my name is Julia. I love cats. In my spare time, I like to play video games.
+ *
+ * - Be sure to include spaces and periods where necessary!
+ */
 
 // var firstName = "Peps";
 // var interest = "coding";
@@ -816,20 +881,20 @@ if (suspect === "Mr. Kalehoff")
 
 
 /*
-* Programming Quiz: MadLibs (2-11)
-* 
+ * Programming Quiz: MadLibs (2-11)
+ * 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have the variables - `adjective1`, `adjective2`, `adjective3`, and `madLib`.
-*
-* 2. Use the adjective1, adjective2, and adjective3 variables to set the madLib variable to the message:
-* 'The Intro to JavaScript course is amazing. James and Julia are so fun. I cannot wait to work through the rest of this entertaining content!'
-*
-* 3. Your madLib should match the given string
-* 4. The madLib variable should be printed to the console
-*/
-
-// your code goes here
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have the variables - `adjective1`, `adjective2`, `adjective3`, and `madLib`.
+ *
+ * 2. Use the adjective1, adjective2, and adjective3 variables to set the madLib variable to the message:
+ * 'The Intro to JavaScript course is amazing. James and Julia are so fun. I cannot wait to work through the rest of this entertaining content!'
+ *
+ * 3. Your madLib should match the given string
+ * 4. The madLib variable should be printed to the console
+ */
+ 
+ // your code goes here
 
 // var adjective1 = "amazing";
 // var adjective2 = "fun";
@@ -857,16 +922,16 @@ console.log('$' + total.toFixed(2));
 */
 
 /*
-* Programming Quiz: Semicolons! (2-8)
-*/
+ * Programming Quiz: Semicolons! (2-8)
+ */
 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have two variables -  `thingOne` and `thingTwo`
-* 2. Your code should only have one `console.log` statement
-* 3. Your code should print out the values of `thingOne` and `thingTwo` using concatenation
-* 4. Your code should contain semicolons at the end of each line
-*/
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have two variables -  `thingOne` and `thingTwo`
+ * 2. Your code should only have one `console.log` statement
+ * 3. Your code should print out the values of `thingOne` and `thingTwo` using concatenation
+ * 4. Your code should contain semicolons at the end of each line
+ */
 
 // var thingOne = 'red';
 // var thingTwo = 'blue';
@@ -878,15 +943,15 @@ console.log('$' + total.toFixed(2));
 // "Hello" % 10 *returns NaN
 
 /*
-* Programming Quiz: Yosa Buson (2-6)
-*/
-
+ * Programming Quiz: Yosa Buson (2-6)
+ */
+ 
 /*
-* QUIZ REQUIREMENTS
-* 1. Your code should have a variable `haiku`
-* 2. Your code should use string concatenation
-* 3. Your poem should match the famous haiku poem
-*/
+ * QUIZ REQUIREMENTS
+ * 1. Your code should have a variable `haiku`
+ * 2. Your code should use string concatenation
+ * 3. Your poem should match the famous haiku poem
+ */
 
 // var line1 = "Blowing from the west\n"
 // var line2 = "Fallen leaves together\n"
@@ -898,12 +963,12 @@ console.log('$' + total.toFixed(2));
 
 
 /*
-* Programming Quiz: All Tied Up (2-5)
-
-* Quiz Requirements
-* 1. Your code should have a variable joke
-* 2. Your joke should use only one string
-* 3. Your joke should match the expected format
+ * Programming Quiz: All Tied Up (2-5)
+ 
+ * Quiz Requirements
+ * 1. Your code should have a variable joke
+ * 2. Your joke should use only one string
+ * 3. Your joke should match the expected format
 */
 // var joke = "Why couldn't the shoes go out and play?\nThey were all \"tied\" up!"
 // console.log(joke);
