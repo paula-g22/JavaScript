@@ -1,3 +1,108 @@
+
+
+/*
+Count On
+As you saw in the last exercise your array can be a mix types of data we are going to divide and conquer.
+
+Would you be so kind to add all the items with data-type object into the hello array?
+
+Here is how to print ALL the items.
+Instructions
+Loop the given array
+Push the arrays found to an new array called hello
+Console log the variable hello*/
+
+/*
+let myArray = [42, true, "towel", [2,1], 'hello', 34.4, {"name": "juan"}];
+let hello = [];
+
+
+for(let index = 0; index < myArray.length; index++){
+    let item = myArray[index];
+      if (typeof item == 'object') {
+        hello.push(item);
+      }
+    //console.log(typeof item);
+}
+
+
+//if (item === object) {
+//  hello.push(item);
+
+console.log(hello);
+*/ 
+
+/*
+Write a function to programmatically print in the console the types of the values that the list contains in each position.
+*/ 
+
+/*
+var mix = [42, true, "towel", [2,1], 'hello', 34.4, {"name": "juan"}];
+
+//question: why does it return undefined
+function isType(array) {
+  for (let i in mix)
+  console.log(typeof mix[i]);
+}
+
+/*
+for (let i in mix) {
+  console.log(typeof mix[i]);
+}
+
+console.log(isType(mix));
+*/
+
+/*
+Using a loop, invert the "arr" list
+Hint, you should loop all the array and push all the items (as you go) into a new array.
+
+
+var arr = [45,67,87,23,5,32,60];
+
+/*
+let newArray = arr.map(function() {
+  for (let i = arr.length-1; i>-1; i--)
+  return arr[i]
+})
+
+
+let newArray = arr.map(function(num, i) {
+  for (let i = arr.length-1; i>-1; i--)
+  return arr[arr.length-1]
+})
+
+console.log(newArray);
+*/ 
+
+//PEPS NEED help
+/*
+Letter Counter
+Our customer needs a program that counts the letters repetitions in a given string, I know that's weird, but they are very adamant, We need this asap! 
+
+Instructions:
+letters and the values are the number of times it is repeated throughout the string.
+*/
+/*
+let par = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur eget bibendum turpis Curabitur scelerisque eros ultricies venenatis mi at tempor nisl Integer tincidunt accumsan cursus"
+*/ 
+/*
+Find Wally :)
+
+USE A LOOP!!! and an IF (conditional)
+
+And print the position(s) of Wally in the console.
+
+
+var people = [ 'Lebron','Aaliyah','Diamond','Dominique','Aliyah','Jazmin','Darnell','Hatfield','Hawkins','Hayden','Hayes','Haynes','Hays','Head','Heath','Hebert','Henderson','Hendricks','Hendrix','Henry','Hensley','Henson','Herman','Hernandez','Herrera','Herring','Hess','Hester','Hewitt','Hickman','Hicks','Higgins','Hill','Hines','Hinton','Hobbs','Hodge','Hodges','Hoffman','Hogan','Holcomb','Holden','Holder','Holland','Holloway','Holman','Holmes','Holt','Hood','Hooper','Hoover','Hopkins','Hopper','Horn','Horne','Horton','House','Houston','Howard','Howe','Howell','Hubbard','Huber','Hudson','Huff','Wally','Hughes','Hull','Humphrey','Hunt','Hunter','Hurley','Hurst','Hutchinson','Hyde','Ingram','Irwin','Jackson','Jacobs','Jacobson','James','Jarvis','Jefferson','Jenkins','Jennings','Jensen','Jimenez','Johns','Johnson','Johnston','Jones','Jordan','Joseph','Joyce','Joyner','Juarez','Justice','Kane','Kaufman','Keith','Keller','Kelley','Kelly','Kemp','Kennedy','Kent','Kerr','Key','Kidd','Kim','King','Kinney','Kirby','Kirk','Kirkland','Klein','Kline','Knapp','Knight','Knowles','Knox','Koch','Kramer','Lamb','Lambert','Lancaster','Landry','Lane','Lang','Langley','Lara','Larsen','Larson','Lawrence','Lawson','Le','Leach','Leblanc','Lee','Leon','Leonard','Lester','Levine','Levy','Lewis','Lindsay','Lindsey','Little','Livingston','Lloyd','Logan','Long','Lopez','Lott','Love','Lowe','Lowery','Lucas','Luna','Lynch','Lynn','Lyons','Macdonald','Macias','Mack','Madden','Maddox','Maldonado','Malone','Mann','Manning','Marks','Marquez','Marsh','Marshall','Martin','Martinez','Mason','Massey','Mathews','Mathis','Matthews','Maxwell','May','Mayer','Maynard','Mayo','Mays','Mcbride','Mccall','Mccarthy','Mccarty','Mcclain','Mcclure','Mcconnell','Mccormick','Mccoy','Mccray','Wally','Mcdaniel','Mcdonald','Mcdowell','Mcfadden','Mcfarland','Mcgee','Mcgowan','Mcguire','Mcintosh','Mcintyre','Mckay','Mckee','Mckenzie','Mckinney','Mcknight','Mclaughlin','Mclean','Mcleod','Mcmahon','Mcmillan','Mcneil','Mcpherson','Meadows','Medina','Mejia','Melendez','Melton','Mendez','Mendoza','Mercado','Mercer','Merrill','Merritt','Meyer','Meyers','Michael','Middleton','Miles','Miller','Mills','Miranda','Mitchell','Molina','Monroe','Lucas','Jake','Scott','Amy','Molly','Hannah','Lucas'] ;
+
+people.forEach (function(people, index) {
+  if (people === 'Wally') {
+    console.log(index);
+  }
+})
+*/
+
 /*
 Instructions
 1) Change the second item value to 'Steven'
