@@ -1,4 +1,282 @@
+/* 10.1 Foreach min val 
+Please use the forEach function to get the minimum value of the array and print it in the console.
 
+HINT
+1) Declare an auxiliar global variable
+2) Set its value to a very big integer
+3) Every time you loop compare its value to the item value, if the item value is smaller update the auxiliar variable value to the item value.
+4) Outside of the loop, after the loop is finished, print the auxiliar value. */
+
+/*
+var myArray = [3344,34334,454543,342534,4563456,3445,23455,234,262,2335,43323,4356,345,4545,452,345,434,36,345,4334,5454,345,4352,23,365,345,47,63,425,6578759,768,834,754,35,32,445,453456,56,7536867,3884526,4234,35353245,53244523,566785,7547,743,4324,523472634,26665,63432,54645,32,453625,7568,5669576,754,64356,542644,35,243,371,3251,351223,13231243,734,856,56,53,234342,56,545343];
+
+
+var minimum = myArray[0];
+
+myArray.forEach(function(e) {
+  if (e < minimum)
+    minimum = e;
+});
+
+console.log(minimum);
+ 
+var minimal = myArray[0];
+
+myArray.forEach( v => {
+  if (v < minimal)
+    minimal = v;
+});
+
+console.log(minimal);
+*/ 
+
+
+
+/* 9 Max Integer from Array 
+Write a script that finds the biggest integer in myArray and print that number in the console with the console.log function.
+
+Hint:
+Define an auxiliar variable and set the first value to 0, then compare the variables with all the items in the array. Replace the value every time the new element is bigger than the one stored in the auxiliar variable. At the end you will have the biggest number stored in the variable.
+
+Your result should be 5435. */
+
+/*
+var myArray = [43,23,6,87,43,1,4,6,3,67,8,3445,3,7,5435,63,346,3,456,734,6,34];
+
+let largest = 0;
+
+for (num of myArray) {
+  if (num > largest)
+  largest = num;
+}
+
+console.log(largest);
+*/ 
+
+/* 8.4 Divide and Conquer 
+Instructions
+Create a function called mergeTwoList that expects an array of numbers (integers).
+Loop through the array and separate the odd and the even numbers in different arrays.
+If the number is odd number push it to a placeholder array named odd.
+If the number is even number push it to a placeholder array named even.
+Then concatenate the odd array to the even array to combine them. Remember, the odd array comes first and you have to append the even array.
+
+Example:
+mergeTwoList([1,2,33,10,20,4]);
+
+[1,33,2,10,20,4]
+
+Hints:
+Create empty(placeholder) variables when you need to store data.
+*/
+
+/*
+let list_of_numbers = [4,	80,	85,	59,	37,25,	5,	64,	66,	81, 20,	64,	41,	22,	76,76,	55,	96,	2,	68];
+
+
+function mergeTwoList (arr) {
+  let odd = [];
+  let even = [];
+  for (num of list_of_numbers) {
+    if (num % 2 != 0){
+      odd.push(num);
+    } else {
+      even.push(num);
+    }
+  }
+  return odd.concat(even);
+}
+
+
+function mergeTwoList (arr) {
+  let odd = [];
+  let even = [];
+  for (num of list_of_numbers)
+    num % 2 != 0 ? odd.push(num) : even.push(num);
+  return odd.concat(even);
+}
+
+function mergeTwoList (arr) {
+  let odd = [];
+  let even = [];
+  for (num of list_of_numbers)
+    num % 2 != 0 ? odd.push(num) : even.push(num);
+  return [...odd, ...even];
+}
+
+console.log(mergeTwoList(list_of_numbers));
+*/
+
+/* 8.3 MERGE ARRAYS 
+Write a function that merges two arrays and returns a single new array merging all the values of both arrays.
+
+HINT:
+You will have to loop though each array and insert their items into a new array.
+*/
+
+/*
+var chunk_one = [ 'Lebron', 'Aaliyah', 'Diamond', 'Dominique', 'Aliyah', 'Jazmin', 'Darnell' ];
+var chunk_two = [ 'Lucas' , 'Jake','Scott','Amy', 'Molly','Hannah','Lucas'];
+
+function merge(arr1, arr2) {
+  let mergeArr = [];
+  for (e of arr1) {
+    mergeArr.push(e);
+  }
+  for (e of arr2) {
+    mergeArr.push(e);
+  }
+  return mergeArr;
+}
+
+// function merge(arr1, arr2) {
+//   return [...arr1, ...arr2];
+// }
+
+//let merge = (arr1, arr2) => [...arr1, ...arr2];
+
+console.log(merge(chunk_one, chunk_two));
+*/
+
+/* The only way to delete Daniella from the array (without cheating) will be to create a new array with all the other people but Daniella.
+
+Instructions
+Please create a deletePerson function that deletes any given person from the array and returns a new array without that person.*/
+
+
+var people = ['juan','ana','michelle','daniella','stefany','lucy','barak'];
+
+// function deletePerson(personName){
+// 	let arr = [];
+//   people.forEach(function(person) {
+//     if (person != personName)
+//     arr.push(person);
+//   })
+//   return arr;
+// }
+
+const deletePerson = name => people.filter(e => e !== name);
+
+
+console.log(deletePerson('juan'));
+console.log(deletePerson('pepe'));
+
+/*
+DO DO DO
+The do{}while(); is another loop example in javascript is less commonly used but it is a loop
+// stating value for the loop
+let i = 0;
+
+// the loop will do everything inside of the do code block
+do {
+    // print out the i value
+    console.log(i)
+    // increase the i value
+    i++
+    // evaluate the value
+} while (i < 5);
+*/
+//Print every iteration number on the console from 20 to 0 but concatenate an exclamation point to the output if the number is a module of 5
+//At the end console.log() "LIFTOFF"
+/*
+let i = 20; 
+
+do {
+  if (i % 5 === 0)
+    console.log(i + '!');
+  else 
+    console.log(i);
+  i--;
+} while (i > 0);
+
+console.log('LIFTOFF');
+*/ 
+
+
+/* Instructions
+Compare the item if it is 1 push the number to the array return_array
+Compare the item if it is 0 push "Yahoo" to the array return_array (instead of the number)
+*/
+
+/*
+let myArray = [ 1, 0, 0, 0, 1, 0, 0, 0, 1, 1 ];
+
+let return_array = []
+
+myArray.forEach(function(num) {
+  if (num === 1) {
+    return_array.push(num)
+  } else {
+    return_array.push('Yahoo');
+  }
+});
+
+console.log(return_array);
+*/
+
+/*
+Right now, the code is printing all the items in the array. Please change the function code to print only the numbers divisible by 14.
+
+HINT
+A number X is divisible by 2 if: (X%2===0) */
+
+/*
+var myArray = [3344,34334,454543,342534,4563456,3445,23455,234,262,2335,43323,4356,345,4545,452,345,434,36,345,4334,5454,345,4352,23,365,345,47,63,425,6578759,768,834,754,35,32,445,453456,56,7536867,3884526,4234,35353245,53244523,566785,7547,743,4324,523472634,26665,63432,54645,32,453625,7568,5669576,754,64356,542644,35,243,371,3251,351223,13231243,734,856,56,53,234342,56,545343];
+
+//no es necesario poner index, arr in the function arguments
+
+myArray.forEach(function(num) {
+  if (num % 14 === 0) {
+    console.log(num);
+  }
+});
+*/
+
+
+/*
+Create a function called sumOdds that sums all the odd numbers in the "arr" list and returns the result.
+
+HINT:
+You have to loop the array.
+You will need to declare an auxiliar variable outside the loop to keep adding the values.
+On each loop, you have to ask if the value of the array in that index position is an odd number. If its odd then add the value to the auxiliar.
+
+Hint: an auxiliar variable is a regular variable, the only difference is a logical difference; an auxiliar variable is like a chosen one, it'll be useful until it completes its purpose (add all the values, make a copy of a value, etc). */
+
+/*
+var arr = [4,5,734,43,45,100,4,56,23,67,23,58,45];
+
+function sumOdds(arr) {
+  let oddSum = 0; 
+  for (let i = 0; i<arr.length; i++) {
+    if (arr[i] % 2 != 0) {
+      oddSum += arr[i];
+    } 
+  } return oddSum;
+}
+
+console.log(sumOdds(arr));
+*/
+
+/*
+Complete the code of the function "sum" so that it returns the sum of all the items in mySampleArray.
+
+The result should be 925960
+
+Hint:
+You have to loop the entire array and add the value of each item into the "total" variable. */ 
+
+/*
+var mySampleArray = [3423,5,4,47889,654,8,867543,23,48,5345,234,6,78,54,23,67,3,6,432,55,23,25,12];
+
+let total = 0
+
+for (let i = 0; i<mySampleArray.length; i++) {
+  total += mySampleArray[i];
+}
+
+console.log(total);
+*/
 
 /*
 Count On
@@ -86,6 +364,9 @@ letters and the values are the number of times it is repeated throughout the str
 /*
 let par = "Lorem ipsum dolor sit amet consectetur adipiscing elit Curabitur eget bibendum turpis Curabitur scelerisque eros ultricies venenatis mi at tempor nisl Integer tincidunt accumsan cursus"
 */ 
+
+
+
 /*
 Find Wally :)
 
