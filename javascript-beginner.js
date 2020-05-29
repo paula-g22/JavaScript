@@ -1,3 +1,137 @@
+// let arr = [1,2,3,4,5,6,7,8,9,0]
+
+let colors = ['blue', 'purple', 'pink', 'green', 'yellow', 'red', 'peppercorn', 'mauve', 'aqua', 'turquoise', 'fuchsia', 'white', 'black', 'eggplant']
+
+
+
+// let obj = {
+//   one: 1,
+//   two: 2,
+//   three: 3
+// }
+
+
+// let {three, one} = obj
+
+// console.log(obj.two);
+
+
+
+// let randomNum = Math.floor(Math.random() * colors.length);
+
+// let randomColors = []
+// for (let i = 0; i < 20; i++) {
+//   let randomNum = Math.floor(Math.random() * colors.length);
+//   randomColors.push(colors[randomNum])
+// }
+
+
+
+let obj = {};
+// for (let e of randomColors) {
+//   if (e in obj)
+//     obj[e]++
+//   else obj[e] = 1
+// }
+for (let i = 0; i < 50; i++) {
+  let randomNum = Math.floor(Math.random() * colors.length);
+  obj[i] = 'ihy'
+  let {i} = obj;
+}
+
+
+
+console.log(obj);
+obj[e] = obj[e] + 1
+obj[e]+=1
+++obj[e]
+console.log(obj);
+
+
+
+
+// console.log(randomColors);
+
+//LETTER COUNTER
+// let str = 'hola peps como estas vos hoy, te olvidaste por tu cabeza de chorlito'
+
+// let obj = {}
+// for (let e of str) {
+//   if (e === ' ' || e === ',')
+//     continue
+//   if (e in obj)
+//     obj[e]++
+//   else obj[e] = 1
+// }
+
+// console.log(obj)
+
+
+
+
+// console.log(o, t, h)
+// console.log(two)
+// console.log(three)
+// console.log(one)
+
+// let one = arr[0]
+// let two = arr[1]
+// let three = arr[2]
+
+// let [one, two, three] = arr
+
+// console.log(c)
+// console.log(b)
+
+//make the keys be the random color and the value will be the number of times that that color came up
+
+
+// let obj = {one:1,two:2,three:3, four:'height'}
+
+// function check(obj, type, val){
+//   let result;
+//   for (let [key, value] of Object.entries(obj)) {
+//     if (key === val) {
+//       result = `${key}: ${value}`
+//     } else if ((type === 'value') && (value === val)) {
+//       result = `${key}: ${value}`
+//     } else {
+//       result = 'andate a la puta que te pario'
+//     }
+//   }
+//   return result;
+// } 
+
+// let val = 'three';
+
+
+// function check(obj, type, val){
+//   let result1;
+//   let result2;
+//   for (let [key, value] of Object.entries(obj)) {
+//     result1 = type === 'key' && value === val ? `${key}: ${value}` : false;
+//     result2 = type === 'value' && value === val ? `${key}: ${value}` : false;
+//   }
+//   return result1;
+// }
+
+// let peps = {};
+
+// for (let i = 1; i < 11; i++) {
+//   peps['peps'+i] = i;
+// }
+
+// console.log(peps);
+
+// let x = Object.entries(obj);
+// console.log(x);
+
+// console.log( check(obj, 'value', 4) ) // false
+// console.log( check(obj, 'key', 'one') ) // one: 1
+// console.log( check(obj, 'key', 'two') ) // two: 2
+// console.log( check(obj, 'value', 3) ) // false
+
+
 /* 10.1 Foreach min val 
 Please use the forEach function to get the minimum value of the array and print it in the console.
 
@@ -144,7 +278,7 @@ Instructions
 Please create a deletePerson function that deletes any given person from the array and returns a new array without that person.*/
 
 
-var people = ['juan','ana','michelle','daniella','stefany','lucy','barak'];
+// var people = ['juan','ana','michelle','daniella','stefany','lucy','barak'];
 
 // function deletePerson(personName){
 // 	let arr = [];
@@ -155,11 +289,11 @@ var people = ['juan','ana','michelle','daniella','stefany','lucy','barak'];
 //   return arr;
 // }
 
-const deletePerson = name => people.filter(e => e !== name);
+// const deletePerson = name => people.filter(e => e !== name);
 
 
-console.log(deletePerson('juan'));
-console.log(deletePerson('pepe'));
+// console.log(deletePerson('juan'));
+// console.log(deletePerson('pepe'));
 
 /*
 DO DO DO
@@ -461,16 +595,16 @@ You can use the Math.random() and Math.floor() functions to get random numbers.
 Search on Google how to use random and floor functions.
 */
 
-/*
-var arr = [4,5,734,43,45];
 
-/* // que peps me explique
-for (let i = 0; i<10; i++) {
-  let newNumbers = Math.random()*100;
-  newNumbers = Math.floor(newNumbers);
-  console.log(newNumbers);
-}
-*/
+// var arr = [4,5,734,43,45];
+
+// que peps me explique
+// for (let i = 0; i<10; i++) {
+//   let newNumbers = Math.random()*100;
+//   newNumbers = Math.floor(newNumbers);
+//   console.log(newNumbers);
+// }
+
 /*
 var numOfIntegers = 10;
 for(var i=0; i<numOfIntegers; i++){
