@@ -1,6 +1,6 @@
 // let arr = [1,2,3,4,5,6,7,8,9,0]
 
-let colors = ['blue', 'purple', 'pink', 'green', 'yellow', 'red', 'peppercorn', 'mauve', 'aqua', 'turquoise', 'fuchsia', 'white', 'black', 'eggplant']
+// let colors = ['blue', 'purple', 'pink', 'green', 'yellow', 'red', 'peppercorn', 'mauve', 'aqua', 'turquoise', 'fuchsia', 'white', 'black', 'eggplant']
 
 
 
@@ -27,25 +27,31 @@ let colors = ['blue', 'purple', 'pink', 'green', 'yellow', 'red', 'peppercorn', 
 
 
 
-let obj = {};
+// let obj = {};
 // for (let e of randomColors) {
 //   if (e in obj)
 //     obj[e]++
 //   else obj[e] = 1
 // }
-for (let i = 0; i < 50; i++) {
-  let randomNum = Math.floor(Math.random() * colors.length);
-  obj[i] = 'ihy'
-  let {i} = obj;
-}
+// for (let i = 0; i < 20; i++) {
+//   let randomColors = []
+//   randomColors.push(colors[Math.floor(Math.random() * colors.length)])
+//   for (let e of randomColors) {
+//     if (e in obj) {
+//       obj[e]++
+//     } else {
+//       obj[e] = 1
+//     }
+//   }
+// }
 
 
 
-console.log(obj);
-obj[e] = obj[e] + 1
-obj[e]+=1
-++obj[e]
-console.log(obj);
+// console.log(obj);
+// obj[e] = obj[e] + 1
+// obj[e]+=1
+// ++obj[e]
+// console.log(obj);
 
 
 
@@ -86,22 +92,73 @@ console.log(obj);
 //make the keys be the random color and the value will be the number of times that that color came up
 
 
-// let obj = {one:1,two:2,three:3, four:'height'}
+let obj = {one:1,two:2,three:3, four:'height'}
 
 // function check(obj, type, val){
-//   let result;
+//   let result = false;
+//   if (type === 'key') {
+//     for (let e of Object.entries(obj)) {
+//       if (e[0] === val)
+//       result = e[0] + ': ' + e[1]
+//       // else 
+//       // result = false
+//     }
+//   } else if (type === 'value') {
+//     for (let e of Object.entries(obj)) {
+//       if (e[1] === val)
+//       result = e[0] + ': ' + e[1]
+//       // else 
+//       // result = false
+//     }
+//   }
+//   return result;
+// } 
+// function check(obj, type, val){
+//   let result = false;
 //   for (let [key, value] of Object.entries(obj)) {
-//     if (key === val) {
-//       result = `${key}: ${value}`
-//     } else if ((type === 'value') && (value === val)) {
-//       result = `${key}: ${value}`
-//     } else {
-//       result = 'andate a la puta que te pario'
+//     if (type === 'key' && val === key) {
+//       result = `${key}: ${value}`;
+//     } 
+//     else if (type === 'value' && val === value) {
+//       result = `${key}: ${value}`;
 //     }
 //   }
 //   return result;
 // } 
 
+// function check(obj, type, val){
+//   let result = false;
+//   for (let [key, value] of Object.entries(obj))
+//     if (type === 'key' && val === key || type === 'value' && val === value)
+//       result = `${key}: ${value}`;
+//   return result;
+// } 
+
+// function check(obj, type, val){
+//   let result = false;
+//   for (let [key, value] of Object.entries(obj))
+//     if (type === 'key' && val === key || type === 'value' && val === value) {
+//       result = `${key}: ${value}`;
+//       break;
+//     }
+//   return result;
+// } 
+
+function check(obj, type, val){
+  for (let [key, value] of Object.entries(obj))
+    if (type === 'key' && val === key || type === 'value' && val === value)
+      return `${key}: ${value}`;
+  return false;
+} 
+
+// for (let e of Object.entries(obj)) {
+//   console.log(e[0]);
+// }
+
+console.log( check(obj, 'value', 4) ) // false
+console.log( check(obj, 'key', 'one') ) // one: 1
+console.log( check(obj, 'key', 'two') ) // two: 2
+console.log( check(obj, 'key', 'height') ) // false
 // let val = 'three';
 
 
@@ -126,10 +183,7 @@ console.log(obj);
 // let x = Object.entries(obj);
 // console.log(x);
 
-// console.log( check(obj, 'value', 4) ) // false
-// console.log( check(obj, 'key', 'one') ) // one: 1
-// console.log( check(obj, 'key', 'two') ) // two: 2
-// console.log( check(obj, 'value', 3) ) // false
+
 
 
 /* 10.1 Foreach min val 
