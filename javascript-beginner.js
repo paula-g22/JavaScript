@@ -92,7 +92,7 @@
 //make the keys be the random color and the value will be the number of times that that color came up
 
 
-let obj = {one:1,two:2,three:3, four:'height'}
+let obj = {one:1,two:2,three:3, four:'height', five:4, six:4, seven:7}
 
 // function check(obj, type, val){
 //   let result = false;
@@ -144,12 +144,30 @@ let obj = {one:1,two:2,three:3, four:'height'}
 //   return result;
 // } 
 
+// function check(obj, type, val){
+//   for (let [key, value] of Object.entries(obj))
+//     if (type === 'key' && val === key || type === 'value' && val === value)
+//       return `${key}: ${value}`;
+//   return false;
+// } 
+
 function check(obj, type, val){
-  for (let [key, value] of Object.entries(obj))
-    if (type === 'key' && val === key || type === 'value' && val === value)
-      return `${key}: ${value}`;
-  return false;
-} 
+  
+  if (type === 'key') {
+   for (let [key, value] of Object.entries(obj))
+      if (val === key)
+        return `${key}: ${value}`; 
+  }
+  else if (type === 'value') {
+    let numOfValues = []; 
+    for (let [key, value] of Object.entries(obj)) {
+      if (val === value)
+        numofValues.push(`${key}: ${value}`)
+    }
+
+  }
+  else return false;
+}
 
 // for (let e of Object.entries(obj)) {
 //   console.log(e[0]);
