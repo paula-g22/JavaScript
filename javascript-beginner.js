@@ -1,3 +1,109 @@
+//create a function q si vos le decias whatever number you give it, it will return a list of that many items(objects) in the list with random dates. The keys will be month(1-12) and day (1-30)
+
+function createArray(length) {
+  let randomDates = [];
+  for (let x = 0; x < length; x++) {
+    randomDates.push({
+      Month: createRandom(12),
+      Day: createRandom(30)
+    })
+  }
+  return randomDates;
+}
+
+function createRandom(num) {
+  return Math.floor(Math.random()*num+1)
+}
+
+let newArr = createArray(100).sort( function(a,b) {
+    if (a.Month > b.Month ||
+      a.Month === b.Month && a.Day > b.Day)
+      return 1
+    return -1
+})
+
+for (let e of newArr)
+  console.log(e);
+
+
+
+// let arr = [1,2, 6, 8, 22, 20, 10]
+
+
+// function isSorted(arr) {
+//   for (let i=0; i < arr.length-1; i++)
+//     if (arr[i] > arr[i+1])
+//       return false
+//   return true
+// }
+
+// function processArray(arr) {
+//   if (isSorted(arr)) {
+//     return {
+//       sorted: true,
+//       unsortedArray: null,
+//       sortedArray: arr
+//     }
+//   }
+//   return {
+//     sorted: false,
+//     unsortedArray: [...arr],
+//     sortedArray: arr.sort((a, b) => a-b),
+//   }
+// }
+
+
+
+// console.log(processArray(arr));
+
+
+// let arr = [1,[2,3]]
+// let x = [...arr]
+// x.push(5)
+// x[1].push(4)
+// console.log(arr)
+// console.log(x)
+
+
+// let arr = [1,2]
+// let x = arr
+// x.push(3)
+
+// console.log(arr)
+// console.log(x)
+
+
+// let arr = [1,2]
+// let x = arr.slice()
+// x.push(3)
+
+// console.log(arr)
+// console.log(x)
+
+
+// let arr = [1,2]
+// let x = [...arr]
+// x.push(3)
+
+// console.log(arr)
+// console.log(x)
+
+
+// let y = 'hi'
+// let z = y
+// z += 'p'
+
+// console.log(y)
+// console.log(z)
+
+
+// console.log( ['a','c','e','d','b'].sort((a,b) => {
+//   if (a > b) return 1
+//   else return -1
+// }) )
+
+// console.log( [5,2,3,2,1].sort((a,b) => a-b) )
+
 // let arr = [1,2,3,4,5,6,7,8,9,0]
 
 // let colors = ['blue', 'purple', 'pink', 'green', 'yellow', 'red', 'peppercorn', 'mauve', 'aqua', 'turquoise', 'fuchsia', 'white', 'black', 'eggplant']
@@ -92,7 +198,23 @@
 //make the keys be the random color and the value will be the number of times that that color came up
 
 
-let obj = {one:1,two:2,three:3, four:'height', five:4, six:4, seven:7}
+// let obj = {one:1,two:2,three:3, four:'height', five:4, six:4, seven:7}
+
+// function check(obj, type, val){
+//   if (type === 'key' && val in obj)
+//     return {[val]: obj[val]}
+//   if (type === 'value') {
+//     let answer = {}
+//     for (let [key, value] of Object.entries(obj)) {
+//       if (val === value) {
+//         answer[key] = value;
+//       }
+//     }
+//     if (Object.keys(answer).length !== 0)
+//       return answer;
+//   }
+//   return false;
+// }
 
 // function check(obj, type, val){
 //   let result = false;
@@ -151,33 +273,33 @@ let obj = {one:1,two:2,three:3, four:'height', five:4, six:4, seven:7}
 //   return false;
 // } 
 
-function check(obj, type, val){
+// function check(obj, type, val){
   
-  if (type === 'key') {
-   for (let [key, value] of Object.entries(obj))
-      if (val === key)
-        return `${key}: ${value}`; 
-  }
-  else if (type === 'value') {
-    let numOfValues = []; 
-    for (let [key, value] of Object.entries(obj)) {
-      if (val === value)
-        numofValues.push(`${key}: ${value}`)
-    }
+//   if (type === 'key') {
+//    for (let [key, value] of Object.entries(obj))
+//       if (val === key)
+//         return `${key}: ${value}`; 
+//   }
+//   else if (type === 'value') {
+//     let numOfValues = []; 
+//     for (let [key, value] of Object.entries(obj)) {
+//       if (val === value)
+//         numofValues.push(`${key}: ${value}`)
+//     }
 
-  }
-  else return false;
-}
-
-// for (let e of Object.entries(obj)) {
-//   console.log(e[0]);
+//   }
+//   else return false;
 // }
 
-console.log( check(obj, 'value', 4) ) // false
-console.log( check(obj, 'key', 'one') ) // one: 1
-console.log( check(obj, 'key', 'two') ) // two: 2
-console.log( check(obj, 'key', 'height') ) // false
-// let val = 'three';
+// // for (let e of Object.entries(obj)) {
+// //   console.log(e[0]);
+// // }
+
+// console.log( check(obj, 'value', 4 )) // false
+// console.log( check(obj, 'key', 'one') ) // one: 1
+// console.log( check(obj, 'key', 'two') ) // two: 2
+// console.log( check(obj, 'key', 'height') ) // false
+// // let val = 'three';
 
 
 // function check(obj, type, val){
