@@ -1,10 +1,16 @@
 //create a function q si vos le decias whatever number you give it, it will return a list of that many items(objects) in the list with random dates. The keys will be month(1-12) and day (1-30)
 
+let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+// let randomMonth = [];
+
+
+
 function createArray(length) {
   let randomDates = [];
   for (let x = 0; x < length; x++) {
     randomDates.push({
-      Month: createRandom(12),
+      Month: months[Math.floor( Math.random() * months.length)],
       Day: createRandom(30)
     })
   }
@@ -15,16 +21,105 @@ function createRandom(num) {
   return Math.floor(Math.random()*num+1)
 }
 
+// for (let x=0; x<50; x++)
+//   randomMonth.push( months[Math.floor( Math.random() * months.length)]);
+//   console.log(randomMonth);
+
+// function turnToNum(arr) {
+//   for (let i in arr) {
+//     arr[0] = 1
+//     arr[i] = arr[i-1] + 1
+//   }
+//   return arr;
+// }
+
+// function turnToNum(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     arr[i] = i + 1
+//   }
+//   return arr;
+// }
+
+
+let numMonths = {};
+for (let i = 0; i < months.length; i++) {
+  numMonths[[months[i]]] = i + 1 
+}
+let obj = numMonths;
+// console.log(numMonths);
+  
+// function turnToNum(month) {
+//   month = month.toLowerCase();
+//   switch (month) {
+//     case 'jan':
+//       return 1;
+//     case 'feb':
+//       return 2;
+//     case 'mar':
+//       return 3;
+//   }  
+// }
+
+
+// let obj = {
+//   Jan: 1,
+//   Feb: 2,
+//   Mar: 3
+// }
+
+// function turnToNum(month) {
+//   return obj[month]
+// }
+
+// console.log(turnToNum('Jan'))
+// console.log(turnToNum('Feb'))
+// console.log(turnToNum('Mar'))
+
+// console.log(turnToNum(month));
+
 let newArr = createArray(100).sort( function(a,b) {
-    if (a.Month > b.Month ||
+    if (obj[a.Month] > obj[b.Month] ||
       a.Month === b.Month && a.Day > b.Day)
       return 1
     return -1
 })
 
-for (let e of newArr)
-  console.log(e);
+// console.log(newArr);
 
+
+for (let i = 0; i < newArr.length; i++) {
+  if (i !== 0 && newArr[i].Month !== newArr[i-1].Month)
+    console.log();
+  console.log(newArr[i]);
+}
+
+
+  // let newArr = createArray(100)
+// newArr = newArr.sort( (a,b) => {
+//   if (a.Month === b.Month) {
+//     if (a.Day > b.Day) return 1
+//     return -1
+//   }
+//   if (a.Month > b.Month) return 1
+//   return -1
+// })
+// newArr = newArr.sort( (a,b) => {
+//   if (a.Month > b.Month || 
+//     a.Month === b.Month && a.Day > b.Day)
+//     return 1
+//   return -1
+// })
+// newArr = newArr.sort( (a,b) => {
+//   if (a.Month > b.Month)
+//     return 1
+//   else if (a.Month < b.Month)
+//     return -1
+//   else {
+//     if (a.Day > b.Day)
+//       return 1
+//     return -1
+//   }  
+// })
 
 
 // let arr = [1,2, 6, 8, 22, 20, 10]
