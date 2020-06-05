@@ -1,25 +1,65 @@
+// console.log("paugarcia22@gmail.com".indexOf('@'))
+
+let email = "paugarcia22@gmail.com"
+
+// console.log(email.substring(0, email.indexOf('@')))
+// console.log(email.substring(0, 11))
+
+function userName(email) {
+  return email.substring(0, email.indexOf('@'))
+}
+
+let name = "HernanGarcia"
+
+// console.log( userName(email));
+
+// function firstLast (name) {
+//   return {
+//     firstName: name.substring(0, name.indexOf('G')),
+//     lastName: name.substring(name.indexOf('G'))
+//   }
+// }
+
+// function firstLast (name) {
+//   return `{firstName: ${name.substring(0, name.indexOf('G'))}, lastName: ${name.substring(name.indexOf('G'))}}`
+// }
+
+// console.log(firstLast(name));
+
+function firstLast (name) {
+  let upper = name.toUpperCase();
+  let indexOfUpper;
+  for (let i in name) {
+    if (name[i] === upper[i])
+      indexOfUpper = i;
+  }
+  return `{firstName: ${name.substring(0, indexOfUpper)}, lastName: ${name.substring(indexOfUpper}}`
+}
+
+console.log(firstLast(name));
+
 //create a function q si vos le decias whatever number you give it, it will return a list of that many items(objects) in the list with random dates. The keys will be month(1-12) and day (1-30)
 
-let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+// let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
 // let randomMonth = [];
 
 
 
-function createArray(length) {
-  let randomDates = [];
-  for (let x = 0; x < length; x++) {
-    randomDates.push({
-      Month: months[Math.floor( Math.random() * months.length)],
-      Day: createRandom(30)
-    })
-  }
-  return randomDates;
-}
+// function createArray(length) {
+//   let randomDates = [];
+//   for (let x = 0; x < length; x++) {
+//     randomDates.push({
+//       Month: months[Math.floor( Math.random() * months.length)],
+//       Day: createRandom(30)
+//     })
+//   }
+//   return randomDates;
+// }
 
-function createRandom(num) {
-  return Math.floor(Math.random()*num+1)
-}
+// function createRandom(num) {
+//   return Math.floor(Math.random()*num+1)
+// }
 
 // for (let x=0; x<50; x++)
 //   randomMonth.push( months[Math.floor( Math.random() * months.length)]);
@@ -41,11 +81,11 @@ function createRandom(num) {
 // }
 
 
-let numMonths = {};
-for (let i = 0; i < months.length; i++) {
-  numMonths[[months[i]]] = i + 1 
-}
-let obj = numMonths;
+// let numMonths = {};
+// for (let i = 0; i < months.length; i++) {
+//   numMonths[[months[i]]] = i + 1 
+// }
+// let obj = numMonths;
 // console.log(numMonths);
   
 // function turnToNum(month) {
@@ -77,21 +117,31 @@ let obj = numMonths;
 
 // console.log(turnToNum(month));
 
-let newArr = createArray(100).sort( function(a,b) {
-    if (obj[a.Month] > obj[b.Month] ||
-      a.Month === b.Month && a.Day > b.Day)
-      return 1
-    return -1
-})
+// let newArr = createArray(100).sort( function(a,b) {
+//     if (obj[a.Month] > obj[b.Month] ||
+//       a.Month === b.Month && a.Day > b.Day)
+//       return 1
+//     return -1
+// })
 
 // console.log(newArr);
 
 
-for (let i = 0; i < newArr.length; i++) {
-  if (i !== 0 && newArr[i].Month !== newArr[i-1].Month)
-    console.log();
-  console.log(newArr[i]);
-}
+// for (let i = 0; i < newArr.length; i++) {
+//   if (i !== 0 && newArr[i].Month !== newArr[i-1].Month)
+//     console.log();
+//   console.log(newArr[i]);
+// }
+
+// let previous = newArr[0].Month;
+
+// for (let e of newArr) {
+//   if (e.Month !== previous) {
+//     previous = e.Month
+//     console.log()
+//   }
+//   console.log(e)
+// }
 
 
   // let newArr = createArray(100)
