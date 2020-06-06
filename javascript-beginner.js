@@ -1,15 +1,101 @@
+// crea a function that will generate a random list of numbers but the function will guarantee that he list will not be ordered, 
+// por ejemplo you can randomly create the list [0,1] so in this case it has to create another one, 
+// until it's [1,0].. [0,0] or [1,1] won't cut it either because it's in order.. for this main function you will also create 2 helper functions.. 
+// isOrdered(arr) and ranArr(range, length)
+
+// function createRandList (range, length) { //si o si will return un desorden list
+//   let arr = ranArr(range, length);
+//   let intento = 1;
+//   let logs = [arr];
+//   while (isOrdered(arr)) {
+//     arr = ranArr(range, length);
+//     intento++
+//     logs.push(arr)
+//   }
+//   return {
+//     unOrderedArray: arr,
+//     tries: intento,
+//     log: logs
+//   }
+// }
+
+function createRandList (range, length) { //si o si will return un desorden list
+  let arr = ranArr(range, length);
+  let intento = 1;
+  let logs = [arr];
+  while (!isOrdered(arr)) {
+    arr = ranArr(range, length);
+    intento++
+    logs.push(arr)
+  }
+  return {
+    OrderedArray: arr,
+    tries: intento,
+    log: logs
+  }
+}
+
+// function createRandList (range, length) { //si o si will return un desorden list
+//   let arr = ranArr(range, length)
+//   do {
+//     arr = ranArr(range, length);
+//   } 
+//   while (isOrdered(arr))
+//   return {
+//     unOrderedArray: arr,
+//     tries: ,
+//     log:
+//   }
+// }
+
+console.log(createRandList([1, 6], 5))
+
+function isOrdered(arr) { // will return true or false
+  for (let i=0; i < arr.length-1; i++) 
+    if (arr[i] > arr[i+1]) 
+      return false
+  return true
+}
+
+
+// for (let i =0; i < 20; i++) {
+//   let random = ranArr([0, 2], 2)
+//   console.log({
+//     isOrdered: isOrdered(random),
+//     array: random
+//   })
+// }
+  
+
+  
+
+// let numbers = [1, 3, 4, 5]
+// let nums = [3, 2, 3, 4, 2, 9, 7]
+
+// console.log(isOrdered(nums))
+
+function ranArr(range, length) { // range is an array
+  let arr = [];
+  for (let x = 0; x < length; x++)  // creates loop with number of items in array
+    arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
+  return arr
+} 
+
+// console.log(ranArr([0,8], 50));
+
+
 // console.log("paugarcia22@gmail.com".indexOf('@'))
 
-let email = "paugarcia22@gmail.com"
+// let email = "paugarcia22@gmail.com"
 
 // console.log(email.substring(0, email.indexOf('@')))
 // console.log(email.substring(0, 11))
 
-function userName(email) {
-  return email.substring(0, email.indexOf('@'))
-}
+// function userName(email) {
+//   return email.substring(0, email.indexOf('@'))
+// }
 
-let name = "HernanGarcia"
+// let name = "HernanGarcia"
 
 // console.log( userName(email));
 
@@ -26,17 +112,20 @@ let name = "HernanGarcia"
 
 // console.log(firstLast(name));
 
-function firstLast (name) {
-  let upper = name.toUpperCase();
-  let indexOfUpper;
-  for (let i in name) {
-    if (name[i] === upper[i])
-      indexOfUpper = i;
-  }
-  return `{firstName: ${name.substring(0, indexOfUpper)}, lastName: ${name.substring(indexOfUpper}}`
-}
+// function firstLast (name) {
+//   let upper = name.toUpperCase();
+//   let indexOfUpper;
+//   for (let i in name) {
+//     if (name[i] === upper[i]) // name[i] === name[i].toUpperCase()
+//       indexOfUpper = i;
+//   }
+//   return {
+//     firstName: name.substring(0, indexOfUpper), 
+//     lastName: name.substring(indexOfUpper)
+//   }
+// }
 
-console.log(firstLast(name));
+// console.log(firstLast(name));
 
 //create a function q si vos le decias whatever number you give it, it will return a list of that many items(objects) in the list with random dates. The keys will be month(1-12) and day (1-30)
 
