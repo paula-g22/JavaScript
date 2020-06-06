@@ -1,3 +1,93 @@
+let obj = [
+  {firstName: 'john', lastName: 'garcia'},
+  {firstName: '', lastName: ''},
+  {firstName: 'PANCHO', lastName: 'FERNANDEZ'},
+  {firstName: 'rachel', lastName: 'green'},
+  {firstName: 'alienSmith', lastName: ''},
+  {firstName: '', lastName: 'JoeyTrivianni'},
+  {firstName: 'Emma', lastName: 'negri'},
+  {firstName: 'peps inguanti', lastName: ''},
+  {firstName: '', lastName: 'PePs gArCiA'}
+]
+
+const capitalize = str => str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+
+// console.log(capitalize(obj[7].firstName));
+
+let formattedObj = [];
+
+for (let e of obj) {
+
+  let first = e.firstName;
+  let last = e.lastName;
+  
+  if (first === '' && last === '') { continue; }
+
+  if (first === '') {
+    let arr = last.split(' '); //puts string in array, divided by empty space
+    if (arr.length === 1) { //one word
+      let upper = last.toUpperCase(); 
+      let indexOfUpper;
+      for (let i in last) {
+        if (last[i] === upper[i]) indexOfUpper = i;   
+      } 
+      e.firstName = capitalize(last.substring(0, indexOfUpper)) //makes first name the first part of the name
+      e.lastName = capitalize(last.substring(indexOfUpper));   
+    }
+    else if (arr.length === 2) {
+      e.firstName = capitalize(arr[0]); //the first name is the first element of array, and capitalizes
+      e.lastName = capitalize(arr[1]); //last name is second element of array, and capitalizes
+    }
+  }
+  else if (last === '') { // if last name is empty
+    let arr = first.split(' ');
+    if (arr.length === 1) {
+      let upper = first.toUpperCase();
+      let indexOfUpper;
+      for (let i in first) {
+        if (first[i] === upper[i]) indexOfUpper = i;  
+      } 
+      e.firstName = capitalize(first.substring(0, indexOfUpper))
+      e.lastName = first.substring(indexOfUpper);   
+    }
+    else if (arr.length === 2) {
+      e.firstName = capitalize(arr[0]);
+      e.lastName = capitalize(arr[1]);
+    }
+  }
+  else { //if both names have a string, it capitalizes it
+    e.firstName = capitalize(e.firstName);
+    e.lastName = capitalize(e.lastName);
+  }
+}
+
+// for (let e of obj) {
+//   if (e.firstName === '') {
+//    e.firstName = 'Caca'
+//     e.lastName = 'Pop' 
+//   }
+// }
+
+console.log(obj);
+
+
+
+
+// const fullTrim = str => {
+//         let newStr = "";
+//         str = str.trim();
+//         for (let i in str)
+//             if (str[i] !== " " || str[i - 1] !== " ")
+//                 newStr += str[i];
+//         return newStr;
+//     };
+
+
+
+
+
+
+
 // crea a function that will generate a random list of numbers but the function will guarantee that he list will not be ordered, 
 // por ejemplo you can randomly create the list [0,1] so in this case it has to create another one, 
 // until it's [1,0].. [0,0] or [1,1] won't cut it either because it's in order.. for this main function you will also create 2 helper functions.. 
@@ -19,21 +109,21 @@
 //   }
 // }
 
-function createRandList (range, length) { //si o si will return un desorden list
-  let arr = ranArr(range, length);
-  let intento = 1;
-  let logs = [arr];
-  while (!isOrdered(arr)) {
-    arr = ranArr(range, length);
-    intento++
-    logs.push(arr)
-  }
-  return {
-    OrderedArray: arr,
-    tries: intento,
-    log: logs
-  }
-}
+// function createRandList (range, length) { //si o si will return un desorden list
+//   let arr = ranArr(range, length);
+//   let intento = 1;
+//   let logs = [arr];
+//   while (!isOrdered(arr)) {
+//     arr = ranArr(range, length);
+//     intento++
+//     logs.push(arr)
+//   }
+//   return {
+//     OrderedArray: arr,
+//     tries: intento,
+//     log: logs
+//   }
+// }
 
 // function createRandList (range, length) { //si o si will return un desorden list
 //   let arr = ranArr(range, length)
@@ -48,14 +138,14 @@ function createRandList (range, length) { //si o si will return un desorden list
 //   }
 // }
 
-console.log(createRandList([1, 6], 5))
+// console.log(createRandList([1, 6], 5))
 
-function isOrdered(arr) { // will return true or false
-  for (let i=0; i < arr.length-1; i++) 
-    if (arr[i] > arr[i+1]) 
-      return false
-  return true
-}
+// function isOrdered(arr) { // will return true or false
+//   for (let i=0; i < arr.length-1; i++) 
+//     if (arr[i] > arr[i+1]) 
+//       return false
+//   return true
+// }
 
 
 // for (let i =0; i < 20; i++) {
@@ -74,12 +164,12 @@ function isOrdered(arr) { // will return true or false
 
 // console.log(isOrdered(nums))
 
-function ranArr(range, length) { // range is an array
-  let arr = [];
-  for (let x = 0; x < length; x++)  // creates loop with number of items in array
-    arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
-  return arr
-} 
+// function ranArr(range, length) { // range is an array
+//   let arr = [];
+//   for (let x = 0; x < length; x++)  // creates loop with number of items in array
+//     arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
+//   return arr
+// } 
 
 // console.log(ranArr([0,8], 50));
 
