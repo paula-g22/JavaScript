@@ -111,7 +111,7 @@ for (let e of obj) {
 
 
 
-console.log(obj);
+// console.log(obj);
 
 
 
@@ -152,21 +152,27 @@ console.log(obj);
 //   }
 // }
 
-// function createRandList (range, length) { //si o si will return un desorden list
-//   let arr = ranArr(range, length);
-//   let intento = 1;
-//   let logs = [arr];
-//   while (!isOrdered(arr)) {
-//     arr = ranArr(range, length);
-//     intento++
-//     logs.push(arr)
-//   }
-//   return {
-//     OrderedArray: arr,
-//     tries: intento,
-//     log: logs
-//   }
-// }
+function createRandList (range, length) { //si o si will return un desorden list
+  let arr = ranArr(range, length);
+  let intento = 1;
+  let logs = [arr];
+  while (!isOrdered(arr)) {
+    arr = ranArr(range, length);
+    intento++
+    logs.push(arr)
+  }
+  return {
+    OrderedArray: arr,
+    tries: intento,
+    log: logs
+  }
+}
+
+console.time('time')
+
+createRandList([2,5], 5)
+
+console.timeEnd('time')
 
 // function createRandList (range, length) { //si o si will return un desorden list
 //   let arr = ranArr(range, length)
@@ -183,12 +189,12 @@ console.log(obj);
 
 // console.log(createRandList([1, 6], 5))
 
-// function isOrdered(arr) { // will return true or false
-//   for (let i=0; i < arr.length-1; i++) 
-//     if (arr[i] > arr[i+1]) 
-//       return false
-//   return true
-// }
+function isOrdered(arr) { // will return true or false
+  for (let i=0; i < arr.length-1; i++) 
+    if (arr[i] > arr[i+1]) 
+      return false
+  return true
+}
 
 
 // for (let i =0; i < 20; i++) {
@@ -207,12 +213,12 @@ console.log(obj);
 
 // console.log(isOrdered(nums))
 
-// function ranArr(range, length) { // range is an array
-//   let arr = [];
-//   for (let x = 0; x < length; x++)  // creates loop with number of items in array
-//     arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
-//   return arr
-// } 
+function ranArr(range, length) { // range is an array
+  let arr = [];
+  for (let x = 0; x < length; x++)  // creates loop with number of items in array
+    arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
+  return arr
+} 
 
 // console.log(ranArr([0,8], 50));
 
