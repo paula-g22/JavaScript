@@ -105,23 +105,22 @@ async function test() {
             })
     }
 
-    // let id = {}   
-
-    // for (let i=0; i < results.length; i++) {
-    //     id[url[i]] = results[i].url.replace(/[^0-9]/g, '');
-    // }
-
-    // let newResults = results.sort((a,b) => {
-    //     id[a.url] - id[b.url]
-    // })
-    
+    let newResults = results.slice(2, 80)
     
 
-    // for (let e of results) {
-    //     console.log(e.url)
-    // }
+    let urlNums = []
+    for (let i in results) {
+    urlNums.push(findNum(results[i].url))
+    }
+
+    let missing = []
+    for (let i=1; i <= findNum(results[results.length-1].url); i++) {
+        if (!urlNums.includes(i)) {
+          missing.push(i)
+        }
+      }
     
-    return results
+    return results;
 
 }
 
@@ -130,6 +129,8 @@ function findNum (str) {
     let last = newStr.lastIndexOf('/')+1
     return Number(newStr.substring(last))
 }
+
+// test()
 
 // let arr = [1,2,3,4,6,7,8,9,10,11,14,15,16]
 
@@ -143,9 +144,11 @@ function findNum (str) {
 
 // console.log(missing);
 
-function processResults (arr) {
+function processResults (results) {
+    let alphabetNames = []
+    let backwards = []
 
-    arr.sort((a, b) => {
+    let sortedNames = results.sort((a, b) => {
         let nameA = a.name.toUpperCase();
         let nameB = b.name.toUpperCase();
         if (nameA > nameB)
@@ -153,17 +156,32 @@ function processResults (arr) {
         return -1;
     })
 
-    let alphabetNames = []
+    let urlNums = []
+    for (let i in results) {
+        urlNums.push(findNum(results[i].url))
+    }
 
-    for (let e of arr) {
+    let missing = []
+    for (let i=1; i <= findNum(results[results.length-1].url); i++) {
+        if (!urlNums.includes(i)) {
+          missing.push(i)
+        }
+      }
+    
+
+    for (let e of results) {
         alphabetNames.push(e.name)
     }
 
-    return alphabetNames;
+    return missing;
 
 }
 
-console.log(processResults(test())).then();
+// let results = test();
+
+// test().then(arr => {console.log(arr)})
+
+console.log(typeof test())
 
 // function isMissing (arr1, arr2) {
 //     let missing = arr1.filter((x) => {
@@ -220,6 +238,22 @@ console.log(processResults(test())).then();
 // }
 
 // sortNames()
+
+// let id = {}   
+
+    // for (let i=0; i < results.length; i++) {
+    //     id[url[i]] = results[i].url.replace(/[^0-9]/g, '');
+    // }
+
+    // let newResults = results.sort((a,b) => {
+    //     id[a.url] - id[b.url]
+    // })
+    
+    
+
+    // for (let e of results) {
+    //     console.log(e.url)
+    // }
 
 
 
