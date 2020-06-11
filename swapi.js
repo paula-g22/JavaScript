@@ -195,28 +195,60 @@ function processArray(arr) {
 
 }
 
+async function getHomeWorld() {
+    let results = await test();
+    
+    let newArr = []
+
+    for (let e of results) {
+        let id = findNum(e.url);
+        let homeUrl = e.homeworld;
+        let homeworld = await fetch(homeUrl).then(resp => resp.json()).then(data => data)
+        if (e.homeworld) {
+            newArr.push({
+                name: e.name,
+                height: e.height,
+                gender: e.gender,
+                homeworld: {
+                    name: homeworld.name,
+                    climate: homeworld.climate,
+                    terrain: homeworld.terrain
+                    },
+                homeworld_link: homeUrl,
+                id: id
+            })
+        }
+        else {
+            return
+        }
+    }
+    console.log(newArr);
+}
+
+getHomeWorld()
+
 // let results = test();
 
 // processResults(test()).then(arr => {console.log(arr)})
 
-function consolelogResults(x) {
-    if (!Array.isArray(x)) {
-        console.log('is promise')
-        x.then(arr => {
-            console.log(processArray(arr))
-        })
-    }
-    else {
-        console.log('is array')
-        console.log(processArray(x))
-    }
-}
+// function consolelogResults(x) {
+//     if (!Array.isArray(x)) {
+//         console.log('is promise')
+//         x.then(arr => {
+//             console.log(processArray(arr))
+//         })
+//     }
+//     else {
+//         console.log('is array')
+//         console.log(processArray(x))
+//     }
+// }
 
-// consolelogResults(test())
+// // consolelogResults(test())
 
-test().then(arr => {
-    consolelogResults(arr)
-})
+// test().then(arr => {
+//     consolelogResults(arr)
+// })
 
 
 // let urlNums = [] //gets the numbers from url and puts them in an array
