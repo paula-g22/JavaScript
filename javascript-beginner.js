@@ -1,16 +1,16 @@
-let obj = [
-  {firstName: 'john', lastName: 'garcia'},
-  {firstName: '', lastName: ''},
-  {firstName: 'PANCHO', lastName: 'FERNANDEZ'},
-  {firstName: 'rachel', lastName: 'green'},
-  {firstName: 'alienSmith', lastName: ''},
-  {firstName: '', lastName: 'JoeyTrivianni'},
-  {firstName: 'Emma', lastName: 'negri'},
-  {firstName: 'peps inguanti', lastName: ''},
-  {firstName: '', lastName: 'PePs gArCiA'}
-]
+// let obj = [
+//   {firstName: 'john', lastName: 'garcia'},
+//   {firstName: '', lastName: ''},
+//   {firstName: 'PANCHO', lastName: 'FERNANDEZ'},
+//   {firstName: 'rachel', lastName: 'green'},
+//   {firstName: 'alienSmith', lastName: ''},
+//   {firstName: '', lastName: 'JoeyTrivianni'},
+//   {firstName: 'Emma', lastName: 'negri'},
+//   {firstName: 'peps inguanti', lastName: ''},
+//   {firstName: '', lastName: 'PePs gArCiA'}
+// ]
 
-const capitalize = str => str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
+// const capitalize = str => str.charAt(0).toUpperCase() + str.substring(1).toLowerCase();
 
 // console.log(capitalize(obj[7].firstName));
 
@@ -66,41 +66,41 @@ const capitalize = str => str.charAt(0).toUpperCase() + str.substring(1).toLower
 // }
 
 
-for (let e of obj) {
+// for (let e of obj) {
 
-  let first = e.firstName;
-  let last = e.lastName;
+//   let first = e.firstName;
+//   let last = e.lastName;
   
-  if (first === '' && last === '') continue;
+//   if (first === '' && last === '') continue;
 
-  let temp;
+//   let temp;
 
-  if (first === '') {
-    temp = last;
-  }
-  else if (last === '') {
-    temp = first;
-  }
+//   if (first === '') {
+//     temp = last;
+//   }
+//   else if (last === '') {
+//     temp = first;
+//   }
   
-  if (temp) {
-    let arr = temp.split(' ');
-    if (arr.length === 1) {
-      let upper = temp.toUpperCase();
-      let indexOfUpper;
-      for (let i in temp) {
-        if (temp[i] === upper[i]) indexOfUpper = i;  
-      } 
-      first = temp.substring(0, indexOfUpper)
-      last = temp.substring(indexOfUpper);   
-    }
-    else if (arr.length === 2) {
-      first = arr[0];
-      last = arr[1];
-    }
-  }
-  e.firstName = capitalize(first);
-  e.lastName = capitalize(last);
-}
+//   if (temp) {
+//     let arr = temp.split(' ');
+//     if (arr.length === 1) {
+//       let upper = temp.toUpperCase();
+//       let indexOfUpper;
+//       for (let i in temp) {
+//         if (temp[i] === upper[i]) indexOfUpper = i;  
+//       } 
+//       first = temp.substring(0, indexOfUpper)
+//       last = temp.substring(indexOfUpper);   
+//     }
+//     else if (arr.length === 2) {
+//       first = arr[0];
+//       last = arr[1];
+//     }
+//   }
+//   e.firstName = capitalize(first);
+//   e.lastName = capitalize(last);
+// }
 
 // for (let e of obj) {
 //   if (e.firstName === '') {
@@ -152,27 +152,27 @@ for (let e of obj) {
 //   }
 // }
 
-function createRandList (range, length) { //si o si will return un desorden list
-  let arr = ranArr(range, length);
-  let intento = 1;
-  let logs = [arr];
-  while (!isOrdered(arr)) {
-    arr = ranArr(range, length);
-    intento++
-    logs.push(arr)
-  }
-  return {
-    OrderedArray: arr,
-    tries: intento,
-    log: logs
-  }
-}
+// function createRandList (range, length) { //si o si will return un desorden list
+//   let arr = ranArr(range, length);
+//   let intento = 1;
+//   let logs = [arr];
+//   while (!isOrdered(arr)) {
+//     arr = ranArr(range, length);
+//     intento++
+//     logs.push(arr)
+//   }
+//   return {
+//     OrderedArray: arr,
+//     tries: intento,
+//     log: logs
+//   }
+// }
 
-console.time('time')
+// console.time('time')
 
-createRandList([2,5], 5)
+// createRandList([2,5], 5)
 
-console.timeEnd('time')
+// console.timeEnd('time')
 
 // function createRandList (range, length) { //si o si will return un desorden list
 //   let arr = ranArr(range, length)
@@ -189,12 +189,12 @@ console.timeEnd('time')
 
 // console.log(createRandList([1, 6], 5))
 
-function isOrdered(arr) { // will return true or false
-  for (let i=0; i < arr.length-1; i++) 
-    if (arr[i] > arr[i+1]) 
-      return false
-  return true
-}
+// function isOrdered(arr) { // will return true or false
+//   for (let i=0; i < arr.length-1; i++) 
+//     if (arr[i] > arr[i+1]) 
+//       return false
+//   return true
+// }
 
 
 // for (let i =0; i < 20; i++) {
@@ -213,12 +213,12 @@ function isOrdered(arr) { // will return true or false
 
 // console.log(isOrdered(nums))
 
-function ranArr(range, length) { // range is an array
-  let arr = [];
-  for (let x = 0; x < length; x++)  // creates loop with number of items in array
-    arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
-  return arr
-} 
+// function ranArr(range, length) { // range is an array
+//   let arr = [];
+//   for (let x = 0; x < length; x++)  // creates loop with number of items in array
+//     arr.push( Math.floor( Math.random() * (range[1]-range[0]) + (range[0]) )) //pushes into array a random number between the range
+//   return arr
+// } 
 
 // console.log(ranArr([0,8], 50));
 
@@ -537,19 +537,19 @@ function ranArr(range, length) { // range is an array
 
 // console.log(randomColors);
 
-//LETTER COUNTER
-// let str = 'hola peps como estas vos hoy, te olvidaste por tu cabeza de chorlito'
+// LETTER COUNTER
+let str = 'hola peps como estas vos hoy, te olvidaste por tu cabeza de chorlito'
 
-// let obj = {}
-// for (let e of str) {
-//   if (e === ' ' || e === ',')
-//     continue
-//   if (e in obj)
-//     obj[e]++
-//   else obj[e] = 1
-// }
+let obj = {}
+for (let e of str) {
+  if (e === ' ' || e === ',')
+    continue
+  if (e in obj)
+    obj[e]++
+  else obj[e] = 1
+}
 
-// console.log(obj)
+console.log(obj)
 
 
 

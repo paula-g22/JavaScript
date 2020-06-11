@@ -222,10 +222,10 @@ async function getHomeWorld() {
             return
         }
     }
-    console.log(newArr);
+    return newArr;
 }
 
-getHomeWorld()
+getHomeWorld().then(arr => console.log(arr));
 
 // let results = test();
 
