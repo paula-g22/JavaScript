@@ -124,7 +124,7 @@ async function test() {
 
 }
 
-function findNum (str) {
+function findNum(str) {
     let newStr = str.substring(0, (str.length-1));
     let last = newStr.lastIndexOf('/')+1
     return Number(newStr.substring(last))
@@ -144,11 +144,12 @@ function findNum (str) {
 
 // console.log(missing);
 
-function processResults (results) {
+function processArray(arr) {
+    
+    //alphebitizing
     let alphabetNames = []
-    let backwards = []
 
-    let sortedNames = results.sort((a, b) => {
+    let sortedNames = arr.sort((a, b) => {
         let nameA = a.name.toUpperCase();
         let nameB = b.name.toUpperCase();
         if (nameA > nameB)
@@ -156,32 +157,72 @@ function processResults (results) {
         return -1;
     })
 
-    let urlNums = []
-    for (let i in results) {
-        urlNums.push(findNum(results[i].url))
-    }
-
-    let missing = []
-    for (let i=1; i <= findNum(results[results.length-1].url); i++) {
-        if (!urlNums.includes(i)) {
-          missing.push(i)
-        }
-      }
-    
-
-    for (let e of results) {
+    for (let e of arr) {
         alphabetNames.push(e.name)
     }
 
-    return missing;
+    //finding missing (if any) numbers from the url code
+    let requiredLength = findNum(arr[arr.length-1].url);
+
+    let urlNums = [] //gets the numbers from url and puts them in an array
+    for (let i in arr) {
+        urlNums.push(findNum(arr[i].url))
+    }
+
+    let missing = []
+    for (let i=1; i <= requiredLength; i++) {
+        if (!urlNums.includes(i)) {
+          missing.push(i)
+        }
+    }
+    
+    //sort list backwards by url num
+
+    let backwards = arr.sort((a, b) => {
+        let numA = findNum(a.url);
+        let numB = findNum(b.url);
+        if (numA < numB)
+            return 1;
+        return -1
+    })
+
+    
+    return {
+        isMissing: missing,
+        alphetized: alphabetNames,
+        // backwards: backwards
+    }
 
 }
 
 // let results = test();
 
-// test().then(arr => {console.log(arr)})
+// processResults(test()).then(arr => {console.log(arr)})
 
-console.log(typeof test())
+function consolelogResults(x) {
+    if (!Array.isArray(x)) {
+        console.log('is promise')
+        x.then(arr => {
+            console.log(processArray(arr))
+        })
+    }
+    else {
+        console.log('is array')
+        console.log(processArray(x))
+    }
+}
+
+// consolelogResults(test())
+
+test().then(arr => {
+    consolelogResults(arr)
+})
+
+
+// let urlNums = [] //gets the numbers from url and puts them in an array
+//     for (let i in results) {
+//         urlNums.push(findNum(results[i].url))
+//     }
 
 // function isMissing (arr1, arr2) {
 //     let missing = arr1.filter((x) => {
