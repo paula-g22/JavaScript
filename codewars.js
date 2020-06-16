@@ -146,25 +146,66 @@
 // [ {name: 'Bart'}, {name: 'Lisa'} ]
 // [ {name: 'Bart'} ]
 
-function list(names){
-    let answer = ''
-    if (names.length === 1) {
-       answer = names[0]['name']
-    }
-    else if (names.length > 1) {
-        for (let i = 0; i < names.length; i++) {
-            if (i < names.length-2) {
-                answer += names[i]['name'] + ', ' 
-            }
-            else if (i === names.length -2) {
-               answer += names[i]['name'] + ' & ' 
-            }
-            else {
-               answer += names[i]['name'] 
-            }
+// function list(names){
+//     let answer = ''
+//     if (names.length === 1) {
+//        answer = names[0]['name']
+//     }
+//     else if (names.length > 1) {
+//         for (let i = 0; i < names.length; i++) {
+//             if (i < names.length-2) {
+//                 answer += names[i]['name'] + ', ' 
+//             }
+//             else if (i === names.length -2) {
+//                answer += names[i]['name'] + ' & ' 
+//             }
+//             else {
+//                answer += names[i]['name'] 
+//             }
+//         }
+//     }
+//     return answer
+//   }
+
+//   console.log(list([{name: 'Bar'}]))
+
+// function sumDigPow(a, b) {
+//     let answer = [];
+//     for (let i = a; i <= b; i++) {
+//       if (i === helperFunc(i)) {
+//         answer.push(i)
+//       }
+//     }
+//     return answer;
+// }
+
+// function helperFunc(int) {
+//   let num = int.toString()
+//   let sum = 0
+//   for (let i = 0; i < num.length; i++) {
+//     sum += (Number(num[i])**(i+1))
+//   }
+//   return sum;
+// }
+
+function sumDigPow(a, b) {
+    let answer = [];
+    for (let num = a; num <= b; num++) {
+        let int = num.toString()
+        let sum = 0
+        for (let i = 0; i < int.length; i++) {
+            sum += (Number(int[i])**(i+1))
+        }
+        if (num === sum) {
+            answer.push(num)
         }
     }
-    return answer
-  }
+    return answer;
+}
 
-  console.log(list([{name: 'Bar'}]))
+console.log(sumDigPow(5, 500))
+
+
+// for (let i = 0; i < x.length; i++) {
+//   console.log( sum += (Number(x[i])**(i+1)) )
+// }
