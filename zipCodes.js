@@ -32,7 +32,7 @@ function findZip(item) {
 
 
 
-console.log(findZip('ME'));
+// console.log(findZip('ME'));
 
 // let zipCodes = {}
 // for (let e of zipCode) {

@@ -167,7 +167,21 @@
 //     return answer
 //   }
 
-//   console.log(list([{name: 'Bar'}]))
+function list(names){
+    if (names.length === 1) {
+        return names[0]['name']
+    }
+    let answer = '' 
+    for (let e of names) {
+        answer+= e.name + ', '
+    }
+    answer = answer.substring(0, answer.length-2)
+    answer = answer.replace(/(.*),/, '$1 &')
+
+    return answer;
+  }
+
+console.log(list([ {name: 'Bart'}, {name: 'Lisa'}, {name: 'Peps'}, {name: 'Luis'}, {name: 'Paula'}, {name: 'Emma'}, {name: 'Amber'} ]));
 
 // function sumDigPow(a, b) {
 //     let answer = [];
@@ -188,22 +202,22 @@
 //   return sum;
 // }
 
-function sumDigPow(a, b) {
-    let answer = [];
-    for (let num = a; num <= b; num++) {
-        let int = num.toString()
-        let sum = 0
-        for (let i = 0; i < int.length; i++) {
-            sum += (Number(int[i])**(i+1))
-        }
-        if (num === sum) {
-            answer.push(num)
-        }
-    }
-    return answer;
-}
+// function sumDigPow(a, b) {
+//     let answer = [];
+//     for (let num = a; num <= b; num++) {
+//         let int = num.toString()
+//         let sum = 0
+//         for (let i = 0; i < int.length; i++) {
+//             sum += (Number(int[i])**(i+1))
+//         }
+//         if (num === sum) {
+//             answer.push(num)
+//         }
+//     }
+//     return answer;
+// }
 
-console.log(sumDigPow(5, 500))
+// console.log(sumDigPow(5, 500))
 
 
 // for (let i = 0; i < x.length; i++) {

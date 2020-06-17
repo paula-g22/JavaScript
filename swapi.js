@@ -203,8 +203,8 @@ async function getHomeWorld() {
     for (let e of results) {
         let id = findNum(e.url);
         let homeUrl = e.homeworld;
-        let homeworld = await fetch(homeUrl).then(resp => resp.json()).then(data => data)
         if (e.homeworld) {
+            let homeworld = await fetch(homeUrl).then(resp => resp.json()).then(data => data)
             newArr.push({
                 name: e.name,
                 height: e.height,
@@ -219,7 +219,7 @@ async function getHomeWorld() {
             })
         }
         else {
-            return
+            continue;
         }
     }
     return newArr;
