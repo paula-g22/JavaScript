@@ -36,9 +36,11 @@ function getNames(arr){
     return names;
 }
 
-console.log(getNames(arr))
+// console.log(getNames(arr))
 
+let arr1 = ['Pepe']
 
+console.log(arr1.join(', '))
 
 
 
