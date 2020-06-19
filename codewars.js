@@ -1,3 +1,60 @@
+// function pickPeaks(arr){
+//     let position = []
+//     let peaks = []
+//     let previous;
+//     let plateau;
+//     for (let i=1; i < arr.length-1; i++){
+//         if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){ 
+//             position.push(i)
+//             peaks.push(arr[i])
+//         }
+//         else if (arr[i] > arr[i-1] && )
+//     }
+//     return {
+//         pos: position,
+//         peaks: peaks
+//     }
+//   }
+
+function pickPeaks(arr){
+    let position;
+    let positions = []
+    let peaks = []
+    let potentialPeak = false
+    let previous = arr[0]+1
+    arr.forEach((e, i) =>{
+        if (previous < e){
+            potentialPeak = true
+            position = i; 
+        }
+        if (previous > e){
+            if (potentialPeak === true){
+                peaks.push(previous)
+                positions.push(position)
+                potentialPeak = false
+            }
+        }
+        previous = e;
+    })
+    return {
+        pos: positions,
+        peaks: peaks
+    }
+  }
+
+// console.log(pickPeaks([ 3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3 ]))
+
+console.log((pickPeaks([1,2,3,6,4,1,2,3,2,1]))) //, {pos:[3,7], peaks:[6,3]}));
+console.log((pickPeaks([3,2,3,6,4,1,2,3,2,1,2,3]))) //, {pos:[3,7], peaks:[6,3]}));
+console.log((pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]))) //, {pos:[3,7,10], peaks:[6,3,2]}));
+console.log((pickPeaks([2,1,3,1,2,2,2,2,1]))) //, {pos:[2,4], peaks:[3,2]}));
+console.log((pickPeaks([2,1,3,1,2,2,2,2]))) //, {pos:[2], peaks:[3]}));
+console.log((pickPeaks([2,1,3,2,2,2,2,5,6]))) //, {pos:[2], peaks:[3]}));
+console.log((pickPeaks([2,1,3,2,2,2,2,1]))) //, {pos:[2], peaks:[3]}));
+console.log((pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]))) //, {pos:[2,7,14,20], peaks:[5,6,5,5]}));
+console.log((pickPeaks([]))) //,{pos:[],peaks:[]}));
+console.log((pickPeaks([1,1,1,1]))) //,{pos:[],peaks:[]}));
+
 // The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, 
 // or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
 
@@ -260,13 +317,13 @@
 
 // console.log(moveZeros([ 9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9 ]))
 
-function add(a, b) {
-    let result = (BigInt(a) + BigInt(b)).toString()
+// function add(a, b) {
+//     let result = (BigInt(a) + BigInt(b)).toString()
 
-    return result;
-    // result.toString()
-    // return BigInt(result);
-  }
+//     return result;
+//     // result.toString()
+//     // return BigInt(result);
+//   }
 
-  console.log(add('63829983432984289347293874', '90938498237058927340892374089'), "91002328220491911630239667963")
+//   console.log(add('63829983432984289347293874', '90938498237058927340892374089'), "91002328220491911630239667963")
 
