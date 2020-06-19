@@ -245,17 +245,28 @@
 
 //Write an algorithm that takes an array and moves all the zeros to the end, preserving the order of the other elements.
 
-var moveZeros = function (arr) {
+// var moveZeros = function (arr) {
     // let zeros = arr.filter(e => e===0)
-    for (let e of arr) {
-        arr.splice(arr.indexOf(0), 1)
-        arr.push(0)
-    }
-    return arr;
-}
+//     for (let e of arr) {
+//         arr.splice(arr.indexOf(0), 1)
+//         arr.push(0)
+//     }
+//     return arr;
+// }
 
 //one line using filter
-let moveZeros = (arr) => arr.filter(i => i !== 0).concat(arr.filter(i => i === 0));
+// let moveZeros = (arr) => arr.filter(i => i !== 0).concat(arr.filter(i => i === 0));
 
 
-console.log(moveZeros([ 9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9 ]))
+// console.log(moveZeros([ 9, 0, 0, 9, 1, 2, 0, 1, 0, 1, 0, 3, 0, 1, 9, 0, 0, 0, 0, 9 ]))
+
+function add(a, b) {
+    let result = (BigInt(a) + BigInt(b)).toString()
+
+    return result;
+    // result.toString()
+    // return BigInt(result);
+  }
+
+  console.log(add('63829983432984289347293874', '90938498237058927340892374089'), "91002328220491911630239667963")
+
