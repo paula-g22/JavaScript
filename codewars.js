@@ -1,46 +1,59 @@
-// function pickPeaks(arr){
-//     let position = []
-//     let peaks = []
-//     let previous;
-//     let plateau;
-//     for (let i=1; i < arr.length-1; i++){
-//         if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){ 
-//             position.push(i)
-//             peaks.push(arr[i])
-//         }
-//         else if (arr[i] > arr[i-1] && )
-//     }
-//     return {
-//         pos: position,
-//         peaks: peaks
-//     }
-//   }
-
 function pickPeaks(arr){
-    let position;
-    let positions = []
+    let position = []
     let peaks = []
-    let potentialPeak = false
-    let previous = arr[0]+1
-    arr.forEach((e, i) =>{
-        if (previous < e){
-            potentialPeak = true
-            position = i; 
+    let plateau;
+    for (let i=1; i < arr.length-1; i++){
+        if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){ 
+            position.push(i)
+            peaks.push(arr[i])
         }
-        if (previous > e){
-            if (potentialPeak === true){
-                peaks.push(previous)
-                positions.push(position)
-                potentialPeak = false
+        else if (arr[i] === arr[i+1]){
+            for (let j = i; j < arr.length-1; j++){
+                if (arr[j] === arr[j-1] && arr[j] > arr[j+1] ){
+                    console.log(arr[j])
+                    position.push(i)
+                    peaks.push(arr[i])
+                }
+                // else if (arr[j]===arr[j+1]){
+                //     continue;
+                // }
+                else{
+                    break;
+                }
             }
         }
-        previous = e;
-    })
+    }
     return {
-        pos: positions,
+        pos: position,
         peaks: peaks
     }
   }
+
+// function pickPeaks(arr){
+//     let position;
+//     let positions = []
+//     let peaks = []
+//     let potentialPeak = false
+//     let previous = arr[0]+1
+//     arr.forEach((e, i) =>{
+//         if (previous < e){
+//             potentialPeak = true
+//             position = i; 
+//         }
+//         if (previous > e){
+//             if (potentialPeak === true){
+//                 peaks.push(previous)
+//                 positions.push(position)
+//                 potentialPeak = false
+//             }
+//         }
+//         previous = e;
+//     })
+//     return {
+//         pos: positions,
+//         peaks: peaks
+//     }
+//   }
 
 // console.log(pickPeaks([ 3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3 ]))
 
