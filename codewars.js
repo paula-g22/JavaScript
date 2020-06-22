@@ -8,18 +8,19 @@ function pickPeaks(arr){
             peaks.push(arr[i])
         }
         else if (arr[i] === arr[i+1]){
-            for (let j = i; j < arr.length-1; j++){
-                if (arr[j] === arr[j-1] && arr[j] > arr[j+1] ){
-                    console.log(arr[j])
-                    position.push(i)
-                    peaks.push(arr[i])
-                }
-                // else if (arr[j]===arr[j+1]){
-                //     continue;
-                // }
-                else{
+            for (let j = i; j < arr.length; j++){
+                if (arr[j] > arr[j-1]){
+                    plateau = i;
+                } 
+                else {
                     break;
-                }
+                }   
+            } 
+        } 
+        else if (arr[i] > arr[i+1] && arr[i] === arr[i-1]){
+            if (plateau){
+                position.push(plateau)
+                peaks.push(arr[plateau])
             }
         }
     }
