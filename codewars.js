@@ -1,40 +1,49 @@
-function pickPeaks(arr){
-    let position = []
-    let peaks = []
-    let plateau;
-    for (let i=1; i < arr.length-1; i++){
-        if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){ 
-            position.push(i)
-            peaks.push(arr[i])
-        }
-        else if (arr[i] === arr[i+1]){
-            for (let j = i; j < arr.length; j++){
-                if (arr[j] > arr[j-1]){
-                    plateau = i;
-                } 
-                else if (arr[j] < arr[j-1]){
-                    plateau = null
-                }  
-                else {
-                    break;
-                } 
-            } 
-        } 
-        else if (arr[i] > arr[i+1] && arr[i] === arr[i-1]){
-            if (plateau && !position.includes(plateau)){
-                position.push(plateau)
-                peaks.push(arr[plateau])
-            }
-        }
-    }
-    return {
-        pos: position,
-        peaks: peaks
-    }
-  }
+//Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+function domainName(url){
+    let reg = /(https?:\/\/)?(www\.)?([\w-]+)(\.\w+)/
+    return (url.match(reg));
+}
+
+console.log(domainName("http://www.beauty-heroes-areawesome.com"));
+
+
+// function pickPeaks(arr){
+//     let position = []
+//     let peaks = []
+//     let plateau;
+//     for (let i=1; i < arr.length-1; i++){
+//         if (arr[i] > arr[i-1] && arr[i] > arr[i+1]){ 
+//             position.push(i)
+//             peaks.push(arr[i])
+//         }
+//         else if (arr[i] === arr[i+1]){
+//             for (let j = i; j < arr.length; j++){
+//                 if (arr[j] > arr[j-1]){
+//                     plateau = i;
+//                 } 
+//                 else if (arr[j] < arr[j-1]){
+//                     plateau = null
+//                 }  
+//                 else {
+//                     break;
+//                 } 
+//             } 
+//         } 
+//         else if (arr[i] > arr[i+1] && arr[i] === arr[i-1]){
+//             if (plateau){
+//                 position.push(plateau)
+//                 peaks.push(arr[plateau])
+//             }
+//         }
+//     }
+//     return {
+//         pos: position,
+//         peaks: peaks
+//     }
+//   }
 
 //   console.log(pickPeaks([ 13, 5, 0, 10, 0, -4, -3, 3, 12, 1, 1, 0, 14, -2, 15, 15, 3, 10, -4, 0, 0, -4, 10, 8, 8, 7, 7, 10, -2, -4, 8, 14, 10, 14, 14, 3, 7, 1, 1, 5, 7 ]))
-  console.log(pickPeaks([ 5, 6, -3, 11, 4, 5, -1, 15, 10, -4, -3, -3, 10, 11, -3, 10, -4, 6, 7, 7, 15, 14, 14, -3, 6, 3, -1, 13, -1, 1 ]))
+//   console.log(pickPeaks([ 5, 6, -3, 11, 4, 5, -1, 15, 10, -4, -3, -3, 10, 11, -3, 10, -4, 6, 7, 7, 15, 14, 14, -3, 6, 3, -1, 13, -1, 1 ]))
 
 // function pickPeaks(arr){
 //     let position;
@@ -64,16 +73,16 @@ function pickPeaks(arr){
 
 // console.log(pickPeaks([ 3, 2, 3, 6, 4, 1, 2, 3, 2, 1, 2, 3 ]))
 
-console.log((pickPeaks([1,2,3,6,4,1,2,3,2,1]))) //, {pos:[3,7], peaks:[6,3]}));
-console.log((pickPeaks([3,2,3,6,4,1,2,3,2,1,2,3]))) //, {pos:[3,7], peaks:[6,3]}));
-console.log((pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]))) //, {pos:[3,7,10], peaks:[6,3,2]}));
-console.log((pickPeaks([2,1,3,1,2,2,2,2,1]))) //, {pos:[2,4], peaks:[3,2]}));
-console.log((pickPeaks([2,1,3,1,2,2,2,2]))) //, {pos:[2], peaks:[3]}));
-console.log((pickPeaks([2,1,3,2,2,2,2,5,6]))) //, {pos:[2], peaks:[3]}));
-console.log((pickPeaks([2,1,3,2,2,2,2,1]))) //, {pos:[2], peaks:[3]}));
-console.log((pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]))) //, {pos:[2,7,14,20], peaks:[5,6,5,5]}));
-console.log((pickPeaks([]))) //,{pos:[],peaks:[]}));
-console.log((pickPeaks([1,1,1,1]))) //,{pos:[],peaks:[]}));
+// console.log((pickPeaks([1,2,3,6,4,1,2,3,2,1]))) //, {pos:[3,7], peaks:[6,3]}));
+// console.log((pickPeaks([3,2,3,6,4,1,2,3,2,1,2,3]))) //, {pos:[3,7], peaks:[6,3]}));
+// console.log((pickPeaks([3,2,3,6,4,1,2,3,2,1,2,2,2,1]))) //, {pos:[3,7,10], peaks:[6,3,2]}));
+// console.log((pickPeaks([2,1,3,1,2,2,2,2,1]))) //, {pos:[2,4], peaks:[3,2]}));
+// console.log((pickPeaks([2,1,3,1,2,2,2,2]))) //, {pos:[2], peaks:[3]}));
+// console.log((pickPeaks([2,1,3,2,2,2,2,5,6]))) //, {pos:[2], peaks:[3]}));
+// console.log((pickPeaks([2,1,3,2,2,2,2,1]))) //, {pos:[2], peaks:[3]}));
+// console.log((pickPeaks([1,2,5,4,3,2,3,6,4,1,2,3,3,4,5,3,2,1,2,3,5,5,4,3]))) //, {pos:[2,7,14,20], peaks:[5,6,5,5]}));
+// console.log((pickPeaks([]))) //,{pos:[],peaks:[]}));
+// console.log((pickPeaks([1,1,1,1]))) //,{pos:[],peaks:[]}));
 
 // The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, 
 // or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
