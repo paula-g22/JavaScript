@@ -12,13 +12,16 @@ function pickPeaks(arr){
                 if (arr[j] > arr[j-1]){
                     plateau = i;
                 } 
+                else if (arr[j] < arr[j-1]){
+                    plateau = null
+                }  
                 else {
                     break;
-                }   
+                } 
             } 
         } 
         else if (arr[i] > arr[i+1] && arr[i] === arr[i-1]){
-            if (plateau){
+            if (plateau && !position.includes(plateau)){
                 position.push(plateau)
                 peaks.push(arr[plateau])
             }
@@ -29,6 +32,9 @@ function pickPeaks(arr){
         peaks: peaks
     }
   }
+
+//   console.log(pickPeaks([ 13, 5, 0, 10, 0, -4, -3, 3, 12, 1, 1, 0, 14, -2, 15, 15, 3, 10, -4, 0, 0, -4, 10, 8, 8, 7, 7, 10, -2, -4, 8, 14, 10, 14, 14, 3, 7, 1, 1, 5, 7 ]))
+  console.log(pickPeaks([ 5, 6, -3, 11, 4, 5, -1, 15, 10, -4, -3, -3, 10, 11, -3, 10, -4, 6, 7, 7, 15, 14, 14, -3, 6, 3, -1, 13, -1, 1 ]))
 
 // function pickPeaks(arr){
 //     let position;
