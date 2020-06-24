@@ -1,10 +1,46 @@
-//Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
-function domainName(url){
-    let reg = /(https?:\/\/)?(www\.)?([\w-]+)(\.\w+)/
-    return (url.match(reg));
+//PIN Problem (find all possible variations of a pin)
+
+function getPINs(observed){
+    let adjacents = {
+        1: ['1', '2', '4'],
+        2: ['1', '2', '3', '5'],
+        3: ['2', '3', '6'],
+        4: ['1', '4', '5', '7'],
+        5: ['2', '4', '5', '6', '8'],
+        6: ['3', '5', '6', '9'],
+        7: ['4', '7', '8'],
+        8: ['5', '7', '8', '9', '0'],
+        9: ['6', '8', '9'],
+        0: ['0', '8']
+    }
+    let codes = []
+    let answer = []
+    if (observed.length === 1){
+        return adjacents[observed];
+    }
+    else{
+        for (let e of observed){
+            codes.push(adjacents[e])
+        } 
+        for (let r = 0; r < codes.length; r++) {
+            if (r){}
+            for (let c = 0; c < codes[r].length; c++){
+                console.log(codes[r][c]);
+            }
+        } 
+    }
+    // return codes;
 }
 
-console.log(domainName("http://www.beauty-heroes-areawesome.com"));
+getPINs('10');
+
+//Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+// function domainName(url){
+//     let reg = /(https?:\/\/)?(www\.)?([\w-]+)(\.\w+)/
+//     return (url.match(reg));
+// }
+
+// console.log(domainName("http://www.beauty-heroes-areawesome.com"));
 
 
 // function pickPeaks(arr){
