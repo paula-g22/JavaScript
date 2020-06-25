@@ -24,7 +24,7 @@ function getPINs(observed){
         } 
         for (let r = 0; r < codes[0].length; r++){
             let first = codes[0][r];
-            for (let c = 0; c < codes.length; c++){
+            for (let c = 0; c < codes[1].length; c++){
                 let second = codes[1][c]
                 answer.push(first+second)
             }
@@ -38,7 +38,7 @@ function getPINs(observed){
 }
 
 
-console.log(getPINs('10'));
+console.log(getPINs('34'));
 
 //Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
 // function domainName(url){
