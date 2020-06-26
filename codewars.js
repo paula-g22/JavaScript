@@ -1,7 +1,6 @@
 //PIN Problem (find all possible variations of a pin)
 
-function getPINs(observed){
-    let adjacents = {
+const adjacents = {
         1: ['1', '2', '4'],
         2: ['1', '2', '3', '5'],
         3: ['2', '3', '6'],
@@ -13,8 +12,10 @@ function getPINs(observed){
         9: ['6', '8', '9'],
         0: ['0', '8']
     }
+
+
+function getPINs(observed){
     let codes = []
-    let answer = []
     if (observed.length === 1){
         return adjacents[observed];
     }
@@ -22,23 +23,57 @@ function getPINs(observed){
         for (let e of observed){
             codes.push(adjacents[e])
         } 
-        for (let r = 0; r < codes[0].length; r++){
-            let first = codes[0][r];
-            for (let c = 0; c < codes[1].length; c++){
-                let second = codes[1][c]
-                answer.push(first+second)
-            }
-
-
-        }
-
-        
+        // for (let r = 0; r < codes[0].length; r++){
+        //     let first = codes[0][r];
+        //     for (let c = 0; c < codes[1].length; c++){
+        //         let second = codes[1][c]
+        //         answer.push(first+second)
+        //     }
+        function combo(arr){
+            return arr.reduce((a,b) => (
+              a.map((x) =>
+                b.map((y) =>
+                  x.concat(y)
+                )
+              ).reduce((a,b) => (
+                a.concat(b)
+              ), [])
+            ), [[]])
+        }   
     }
-    return answer;
+    return combo(codes).map(arr => arr.join(''))
 }
 
 
+
 console.log(getPINs('34'));
+
+// let obj = {
+//     one: [2,3,4,5,{y:'5',x:'6'},6,7],
+//     two: {
+//         t: 'sdf',
+//         i: 'iii',
+//         a: ['yoshi','mario',{super:'mario'}]
+//     },
+//     three: 'uioiuo',
+//     four: '5223',
+//     five: 'mario'
+// }
+
+//recursive function to find a specific string
+// function findMario(item){
+//     if (typeof item === 'string' && item === 'mario')
+//         console.log(item)
+//     if (typeof item === 'object')
+//         if (Array.isArray(item))
+//             for (let e of item)
+//                 findMario(e);
+//         else
+//             for (let e of Object.values(item)) 
+//                 findMario(e)      
+// }
+
+// findMario(obj);
 
 //Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
 // function domainName(url){
