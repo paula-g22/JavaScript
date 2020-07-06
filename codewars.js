@@ -1,52 +1,88 @@
+//Find anagrams
+
+function anagrams(word, words){
+    let sorted = x => x.split('').sort().join('');
+  
+    let answer = [];
+    for (let e of words){
+      if (sorted(word) === sorted(e)){
+        answer.push(e)
+      }
+    }
+    return answer;
+  }
+
+// let salute = ['Hi', 'Hello']
+// let name = ['John', 'Tim']
+// let question = ['how are you?', 'how you been?']
+
+// let lst = [salute, name, question]
+
+// function loop(arr, str = ''){
+//     if (){
+//         console.log(str)
+//         return;
+//     }
+//     let copylst = [...arr]
+//     for (let e of copylst.splice(0)){
+//         loop(copylst, str+e)
+//     }
+        
+// }
+
+// loop(lst);
+
+// console.log(new Date().getTime());
+
 //PIN Problem (find all possible variations of a pin)
 
-const adjacents = {
-        1: ['1', '2', '4'],
-        2: ['1', '2', '3', '5'],
-        3: ['2', '3', '6'],
-        4: ['1', '4', '5', '7'],
-        5: ['2', '4', '5', '6', '8'],
-        6: ['3', '5', '6', '9'],
-        7: ['4', '7', '8'],
-        8: ['5', '7', '8', '9', '0'],
-        9: ['6', '8', '9'],
-        0: ['0', '8']
-    }
+// const adjacents = {
+//         1: ['1', '2', '4'],
+//         2: ['1', '2', '3', '5'],
+//         3: ['2', '3', '6'],
+//         4: ['1', '4', '5', '7'],
+//         5: ['2', '4', '5', '6', '8'],
+//         6: ['3', '5', '6', '9'],
+//         7: ['4', '7', '8'],
+//         8: ['5', '7', '8', '9', '0'],
+//         9: ['6', '8', '9'],
+//         0: ['0', '8']
+//     }
 
 
-function getPINs(observed){
-    let codes = []
-    if (observed.length === 1){
-        return adjacents[observed];
-    }
-    else{
-        for (let e of observed){
-            codes.push(adjacents[e])
-        } 
-        // for (let r = 0; r < codes[0].length; r++){
-        //     let first = codes[0][r];
-        //     for (let c = 0; c < codes[1].length; c++){
-        //         let second = codes[1][c]
-        //         answer.push(first+second)
-        //     }
-        function combo(arr){
-            return arr.reduce((a,b) => (
-              a.map((x) =>
-                b.map((y) =>
-                  x.concat(y)
-                )
-              ).reduce((a,b) => (
-                a.concat(b)
-              ), [])
-            ), [[]])
-        }   
-    }
-    return combo(codes).map(arr => arr.join(''))
-}
+// function getPINs(observed){
+//     let codes = []
+//     if (observed.length === 1){
+//         return adjacents[observed];
+//     }
+//     else{
+//         for (let e of observed){
+//             codes.push(adjacents[e])
+//         } 
+//         // for (let r = 0; r < codes[0].length; r++){
+//         //     let first = codes[0][r];
+//         //     for (let c = 0; c < codes[1].length; c++){
+//         //         let second = codes[1][c]
+//         //         answer.push(first+second)
+//         //     }
+//         function combo(arr){
+//             return arr.reduce((a,b) => (
+//               a.map((x) =>
+//                 b.map((y) =>
+//                   x.concat(y)
+//                 )
+//               ).reduce((a,b) => (
+//                 a.concat(b)
+//               ), [])
+//             ), [[]])
+//         }   
+//     }
+//     return combo(codes).map(arr => arr.join(''))
+// }
 
 
 
-console.log(getPINs('34'));
+// console.log(getPINs('34'));
 
 // let obj = {
 //     one: [2,3,4,5,{y:'5',x:'6'},6,7],
