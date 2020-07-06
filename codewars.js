@@ -1,16 +1,23 @@
 //Find anagrams
 
-function anagrams(word, words){
-    let sorted = x => x.split('').sort().join('');
+// function anagrams(word, words){
+//     let sorted = x => x.split('').sort().join('');
   
-    let answer = [];
-    for (let e of words){
-      if (sorted(word) === sorted(e)){
-        answer.push(e)
-      }
-    }
-    return answer;
-  }
+//     let answer = [];
+//     for (let e of words){
+//       if (sorted(word) === sorted(e)){
+//         answer.push(e)
+//       }
+//     }
+//     return answer;
+//   }
+
+//using filter
+function anagrams(word, words){
+  let sorted = x => x.split('').sort().join('');
+  let answer = words.filter(e => sorted(e) === sorted(word))
+  return answer;
+}
 
 // let salute = ['Hi', 'Hello']
 // let name = ['John', 'Tim']
