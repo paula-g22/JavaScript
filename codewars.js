@@ -1,3 +1,20 @@
+//Interesting numbers Kata Codewars
+
+function isInteresting(number, awesomePhrases) {
+  if (number <= 99){
+    return 0
+  }
+  else{
+    let number2 = number + 2;
+    if (number.toString().split('') || number2.toString().split(''))
+
+  }
+}
+
+let number = 12345
+
+console.log(number.toString().split(''));
+
 //Find anagrams
 
 // function anagrams(word, words){
@@ -13,11 +30,11 @@
 //   }
 
 //using filter
-function anagrams(word, words){
-  let sorted = x => x.split('').sort().join('');
-  let answer = words.filter(e => sorted(e) === sorted(word))
-  return answer;
-}
+// function anagrams(word, words){
+//   let sorted = x => x.split('').sort().join('');
+//   let answer = words.filter(e => sorted(e) === sorted(word))
+//   return answer;
+// }
 
 // let salute = ['Hi', 'Hello']
 // let name = ['John', 'Tim']
