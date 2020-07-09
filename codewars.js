@@ -1,19 +1,57 @@
-//Interesting numbers Kata Codewars
+//Josephus permutation
 
-function isInteresting(number, awesomePhrases) {
-  if (number <= 99){
-    return 0
-  }
-  else{
-    let number2 = number + 2;
-    if (number.toString().split('') || number2.toString().split(''))
-
-  }
+function josephus(items,k){
+  //your code here
 }
 
-let number = 12345
+let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
+let k = 2
 
-console.log(number.toString().split(''));
+
+let removed = [];
+let last = k-1
+
+// for (let i=0; i < arr.length; i++){
+//   removed = [...removed.concat(arr.splice(last, 1))]
+//   last = i+k;
+//   if (arr.length === 1){
+//     removed.push(arr.pop())
+//   }
+// }
+
+console.log(removed);
+
+//Interesting numbers Kata Codewars
+
+// function isInteresting(number, awesomePhrases) {
+//   if (number <= 99){
+//     return 0
+//   }
+//   else{
+//     let num = number.toString().split('')
+//     let num1 = (number+1).toString().split('')
+//     let num2 = (number + 2).toString().split('');
+//     for (let i in num){
+//       if (num[0] === '0') continue; 
+//       if (&& num[i] === num[i+1]+1 || num[i] === num[i+1]-1){
+
+//       }
+//     }
+
+//   }
+// }
+
+// let number = 90386
+
+// let sorted = x => x.toString().split('').sort().join('');
+
+// console.log(sorted(number))
+
+// if (sorted(number)[0] === 0){
+//   console.log(sorted (number.slice(1)) + '0')
+// }
+
+
 
 //Find anagrams
 
