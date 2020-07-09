@@ -19,14 +19,30 @@ let last = k-1
 
 let removed = []
 
-for (let i=0; i < arr.length; i++){
-  removed = [...removed.concat(arr.splice(last, 1))]
-  last = i+k;
-  // if (arr.length === 1){
-  //   removed.push(arr.pop())
-  // }
-  console.log(i%arr.length)
-}
+// for (let i=0; i < arr.length; i++){
+//   removed = [...removed.concat(arr.splice(last, 1))]
+//   last = i+k;
+//   if (arr.length > 0){
+//     removed.push(arr.pop())
+//   }
+//   console.log(i%arr.length)
+// }
+
+// let i = 0
+// while (arr.length){
+//   last = i+k;
+//   removed = [...removed.concat(arr.splice(last, 1))]
+// }
+
+var i = 0,
+        len = arr.length;
+    while (arr.length) {
+        console.log(i = (i + last) % len);
+        removed = [...removed.concat(arr.splice(i, 1))];
+    }
+console.log(removed);
+
+
 
 // let i = 0
 // do{
@@ -35,8 +51,6 @@ for (let i=0; i < arr.length; i++){
 //   i++
 // }
 // while (i < arr.length)
-
-console.log(removed);
 
 //Interesting numbers Kata Codewars
 
