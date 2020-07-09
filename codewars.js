@@ -7,17 +7,34 @@ function josephus(items,k){
 let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
 let k = 2
 
-
-let removed = [];
 let last = k-1
+// let removed = arr.reduce((acc, val, index) => {
+//   console.log(acc);
+//   last = index+k;
+//   acc.map().concat(arr.splice(last, 1))
+//   }, arr.splice(last,1))
 
-// for (let i=0; i < arr.length; i++){
-//   removed = [...removed.concat(arr.splice(last, 1))]
-//   last = i+k;
-//   if (arr.length === 1){
-//     removed.push(arr.pop())
-//   }
+// console.log(removed);
+
+
+let removed = []
+
+for (let i=0; i < arr.length; i++){
+  removed = [...removed.concat(arr.splice(last, 1))]
+  last = i+k;
+  // if (arr.length === 1){
+  //   removed.push(arr.pop())
+  // }
+  console.log(i%arr.length)
+}
+
+// let i = 0
+// do{
+//   removed = [...removed.concat(arr.splice(last,1))]
+//   last = i+k
+//   i++
 // }
+// while (i < arr.length)
 
 console.log(removed);
 
