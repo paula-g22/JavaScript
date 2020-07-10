@@ -1,13 +1,23 @@
 //Josephus permutation
 
 function josephus(items,k){
-  //your code here
+  // let last = k-1;
+  let removed = []
+  var i = 0,
+      len = items.length;
+    while (items.length) {
+        i = (i + (k-1)) % len;
+        console.log(i % len)
+        removed = [...removed.concat(items.splice(i, 1))];
+    }
+  return removed;
 }
+console.log(josephus(['C', 'o', 'd', 'e', 'W', 'a', 'r', 's'], 4))
 
-let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
-let k = 2
+// let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
+// let k = 2
 
-let last = k-1
+// let last = k-1
 // let removed = arr.reduce((acc, val, index) => {
 //   console.log(acc);
 //   last = index+k;
@@ -17,16 +27,16 @@ let last = k-1
 // console.log(removed);
 
 
-let removed = []
 
-// for (let i=0; i < arr.length; i++){
-//   removed = [...removed.concat(arr.splice(last, 1))]
-//   last = i+k;
-//   if (arr.length > 0){
-//     removed.push(arr.pop())
-//   }
-//   console.log(i%arr.length)
-// }
+
+for (let i=0; i < arr.length; i++){
+  removed = [...removed.concat(arr.splice(last, 1))]
+  last = i+k;
+  if (arr.length > 0){
+    removed.push(arr.pop())
+  }
+  console.log(i%arr.length)
+}
 
 // let i = 0
 // while (arr.length){
@@ -34,13 +44,6 @@ let removed = []
 //   removed = [...removed.concat(arr.splice(last, 1))]
 // }
 
-var i = 0,
-        len = arr.length;
-    while (arr.length) {
-        console.log(i = (i + last) % len);
-        removed = [...removed.concat(arr.splice(i, 1))];
-    }
-console.log(removed);
 
 
 
