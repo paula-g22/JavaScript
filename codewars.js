@@ -1,3 +1,13 @@
+//Find the next biggest number by rearranging the number, if not possible return -1
+function nextBigger(n){
+  n = n.toString()
+  for (let i in n){
+    let bigger = 
+  }
+}
+
+
+
 //Josephus permutation
 
 // function josephus(items,k){
@@ -37,11 +47,11 @@
 
 // console.log(josephus(['C', 'o', 'd', 'e', 'W', 'a', 'r', 's'], 4))
 
-let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
-let k = 2
+// let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
+// let k = 2
 
-let last = k-1
-let removed = [];
+// let last = k-1
+// let removed = [];
 // let removed = arr.reduce((acc, val, index) => {
 //   console.log(acc);
 //   last = index+k;
@@ -53,16 +63,16 @@ let removed = [];
 
 
 
-for (let i=0; i < arr.length; i++){
-  removed = removed.concat(arr.splice(last, 1))
-  last = i+k;
-  if (last > arr.length-1){
-    last = 0;
-  }
+// for (let i=0; i < arr.length; i++){
+//   removed = removed.concat(arr.splice(last, 1))
+//   last = i+k;
+//   if (last > arr.length-1){
+//     last = 0;
+//   }
   // console.log(i%arr.length)
-}
+// }
 
-console.log(removed);
+// console.log(removed);
 
 // let i = 0
 // while (arr.length){
