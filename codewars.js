@@ -1,23 +1,47 @@
 //Josephus permutation
 
-function josephus(items,k){
-  // let last = k-1;
-  let removed = []
-  var i = 0,
-      len = items.length;
-    while (items.length) {
-        i = (i + (k-1)) % len;
-        console.log(i % len)
-        removed = [...removed.concat(items.splice(i, 1))];
-    }
-  return removed;
-}
-console.log(josephus(['C', 'o', 'd', 'e', 'W', 'a', 'r', 's'], 4))
+// function josephus(items,k){
+//   // let last = k-1;
+//   let removed = []
+//   var i = 0
+//       len = items.length;
+//     while (len = items.length) {
+//         i = (i + (k-1)) % len;
+//         console.log(i % len)
+//         removed = removed.concat(items.splice(i, 1);
+//     }
+//   return removed;
+// }
 
-// let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
-// let k = 2
+// function josephus(items, k) {
+//   arr = [...arr]
+  
+//   const len = arr.length
+//   let current = -1
+//   let answer = []
+  
+//   for (let i=0; i<len; i++) {
+      
+//       for (let j=0; j<k; j++ ) {
+//           current++
+//           if (current > arr.length-1)
+//               current = 0
+//       }
+      
+//       answer.push( arr.splice(current, 1)[0] )
+//       current--
+//   }
+  
+//   return answer
+// }
 
-// let last = k-1
+// console.log(josephus(['C', 'o', 'd', 'e', 'W', 'a', 'r', 's'], 4))
+
+let arr = ['b', 'i', 'f', 'e', 'l', 'a', 'n', 'a']
+let k = 2
+
+let last = k-1
+let removed = [];
 // let removed = arr.reduce((acc, val, index) => {
 //   console.log(acc);
 //   last = index+k;
@@ -30,18 +54,20 @@ console.log(josephus(['C', 'o', 'd', 'e', 'W', 'a', 'r', 's'], 4))
 
 
 for (let i=0; i < arr.length; i++){
-  removed = [...removed.concat(arr.splice(last, 1))]
+  removed = removed.concat(arr.splice(last, 1))
   last = i+k;
-  if (arr.length > 0){
-    removed.push(arr.pop())
+  if (last > arr.length-1){
+    last = 0;
   }
-  console.log(i%arr.length)
+  // console.log(i%arr.length)
 }
+
+console.log(removed);
 
 // let i = 0
 // while (arr.length){
 //   last = i+k;
-//   removed = [...removed.concat(arr.splice(last, 1))]
+//   removed = removed.concat(arr.splice(last, 1))
 // }
 
 
