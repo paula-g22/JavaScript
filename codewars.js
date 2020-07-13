@@ -1,11 +1,19 @@
 //Find the next biggest number by rearranging the number, if not possible return -1
 function nextBigger(n){
-  n = n.toString()
-  for (let i in n){
-    let bigger = 
+  n = n.toString().split('')
+  let number = n.join('')
+  let last = n.pop()
+  let bigger;
+  for (let i=n.length-1; i > 0; i--){
+    n.splice(i, 0, last)
+    bigger = n.join('')
+    if (bigger > number) break;
   }
+  if (bigger > number) return bigger
+  else return -1
 }
 
+console.log(nextBigger(252))
 
 
 //Josephus permutation
