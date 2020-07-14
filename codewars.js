@@ -1,19 +1,34 @@
 //Find the next biggest number by rearranging the number, if not possible return -1
 function nextBigger(n){
   n = n.toString().split('')
-  let number = n.join('')
-  let last = n.pop()
-  let bigger;
+  let number;
+  let p;
+  let pivot;
+  let right;
+  let next;
   for (let i=n.length-1; i > 0; i--){
-    n.splice(i, 0, last)
-    bigger = n.join('')
-    if (bigger > number) break;
+    if (n[i] > n[i-1]){
+      p = i-1
+      break;
+    }
   }
-  if (bigger > number) return bigger
+  if (p >= 0){
+    right = n.splice(p)
+    pivot = right[0]
+    right = right.sort()
+    next = right.splice(right.lastIndexOf(pivot)+1, 1)
+    number = +n.concat(next).concat(right).join('')
+    return number;
+  }
   else return -1
 }
 
-console.log(nextBigger(252))
+console.log(nextBigger(370751))
+
+// const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+// let next = beasts.splice(2,1).concat(beasts)
+
+// console.log(next);
 
 
 //Josephus permutation
