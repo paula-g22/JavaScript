@@ -146,7 +146,7 @@ function findNum(str) {
 
 function processArray(arr) {
     
-    //alphebitizing
+    //alphabetizing
     let alphabetNames = []
 
     let sortedNames = arr.sort((a, b) => {
@@ -189,7 +189,7 @@ function processArray(arr) {
     
     return {
         isMissing: missing,
-        alphetized: alphabetNames,
+        alphabetized: alphabetNames,
         // backwards: backwards
     }
 

@@ -1,47 +1,64 @@
-//Find the next biggest number by rearranging the number, if not possible return -1
-function nextBigger(n){
-  console.log(n)
-  n = n.toString().split('') // converts number to an array
-  let number;
-  let p;
-  let pivot;
-  let right;
-  let next;
-  for (let i=n.length-1; i > 0; i--){
-    if (n[i] > n[i-1]){
-      p = i-1 // finds the index of the 'pivot' point
-      break;
-    }
-  }
-  if (p >= 0){
-    right = n.splice(p) // gets the right side of the array at the pivot point
-    pivot = right[0] // the pivot number
-    right = right.sort() // sorts the right side from lowest to highest
-    next = right.splice(right.lastIndexOf(pivot)+1, 1) // gets the next highest number to account for multiple numbers
-    number = +n.concat(next).concat(right).join('')
-    return number;
-  }
-  else return -1
+//Write a function called double which takes in an array of numbers and returns a new array after doubling every item in that array.
+
+// function double(arr){
+//   return arr.map(num => num * 2)
+// }
+
+// console.log(double([1,2,3]))
+
+function add(arr){
+  return arr.reduce((acc, curr) => acc + curr)
+  // return total;
 }
 
-console.log(nextBigger(1018253))
+console.log(add([1,2,3,4,5,6]))
+
+
+
+//Find the next biggest number by rearranging the number, if not possible return -1
+// function nextBigger(n){
+//   console.log(n)
+//   n = n.toString().split('') // converts number to an array
+//   let number;
+//   let p;
+//   let pivot;
+//   let right;
+//   let next;
+//   for (let i=n.length-1; i > 0; i--){
+//     if (n[i] > n[i-1]){
+//       p = i-1 // finds the index of the 'pivot' point
+//       break;
+//     }
+//   }
+//   if (p >= 0){
+//     right = n.splice(p) // gets the right side of the array at the pivot point
+//     pivot = right[0] // the pivot number
+//     right = right.sort() // sorts the right side from lowest to highest
+//     next = right.splice(right.lastIndexOf(pivot)+1, 1) // gets the next highest number to account for multiple numbers
+//     number = +n.concat(next).concat(right).join('')
+//     return number;
+//   }
+//   else return -1
+// }
+
+// console.log(nextBigger(1018253))
 
 // 1, 2, 2, 2, 5
 
 //Short Code from Kata Code Wars user
-function nextBigger(n){
-  var arr = n.toString().split("").reverse();
-  var i = arr.findIndex((d, _i) => d < arr[_i-1]);
-  console.log(arr, i)
-  if (i === -1) { return -1; }
-  var subarr = arr.slice(0, i);
-  console.log(subarr);
-  var j = subarr.findIndex((d) => d > arr[i]);
-  console.log(j)
-  subarr.splice(j, 1, arr[i]);
-  console.log(subarr)
-  return parseInt(arr.slice(i+1).reverse().concat(arr[j]).concat(subarr).join(""));
-}
+// function nextBigger(n){
+//   var arr = n.toString().split("").reverse();
+//   var i = arr.findIndex((d, _i) => d < arr[_i-1]);
+//   console.log(arr, i)
+//   if (i === -1) { return -1; }
+//   var subarr = arr.slice(0, i);
+//   console.log(subarr);
+//   var j = subarr.findIndex((d) => d > arr[i]);
+//   console.log(j)
+//   subarr.splice(j, 1, arr[i]);
+//   console.log(subarr)
+//   return parseInt(arr.slice(i+1).reverse().concat(arr[j]).concat(subarr).join(""));
+// }
 
 // const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 // let next = beasts.splice(2,1).concat(beasts)
