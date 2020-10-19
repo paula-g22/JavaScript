@@ -16,6 +16,7 @@
  let flavor2 = {flavor: 'dulce de leche'};
  uniqueFlavors.add(flavor1);
  uniqueFlavors.add(flavor2);
+ uniqueFlavors.add(flavor1);
 
  console.log(uniqueFlavors);
 
