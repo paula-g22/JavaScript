@@ -15,3 +15,29 @@ class ListMovies extends Component {
 }
 
 export default ListMovies
+
+class UsersbyMovie extends Component{
+    render() {
+        let usersByMovie = {};
+        this.props.profiles.forEach(profile => {
+            let movieID = profile.favoriteMovieID;
+            if (usersByMovie[movieID]) {
+                usersByMovie[movieID].push(profile.userID);
+            } else {
+                usersByMovie[movieID] = [profile.userID];
+            }
+        })
+
+        
+
+        return (
+            <ul>{Object.values(usersByMovie).map((id) =>
+                <li key={id}>
+                    
+                </li>
+            )}
+            </ul>
+        )
+    }
+}
+
