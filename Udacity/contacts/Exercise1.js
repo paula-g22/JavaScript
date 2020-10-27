@@ -8,6 +8,14 @@ class CreateUserForm extends Component {
           type='text'
           placeholder='First Name' 
           />
+          <input
+            type='text'
+            placeholder='Last Name'
+            />
+          <input 
+            type='text'
+            placeholder='Username'
+            />
       <button disabled={this.fieldIsEmpty} onClick={this.addUser}>Add</button>
       </form>
     )
@@ -18,10 +26,14 @@ function DisplayUser (props){
   return(
     <h2>Users</h2>
     <ul className='user-list'>
-      {props.users.map((username) => (
+      {props.users.map((username) => 
         <li key={userID}>{username}</li>
-      )
-      }
       </ul>
+  ))}
+}
+
+function DisplayGames (props){
+  return(
+
   )
 }
