@@ -6,15 +6,15 @@ class CreateUserForm extends Component {
       <form>
         <input 
           type='text'
-          placeholder='First Name' 
+          placeholder='Enter First Name' 
           />
           <input
             type='text'
-            placeholder='Last Name'
+            placeholder='Enter Last Name'
             />
           <input 
             type='text'
-            placeholder='Username'
+            placeholder='Enter a username'
             />
       <button disabled={this.fieldIsEmpty} onClick={this.addUser}>Add</button>
       </form>
@@ -22,7 +22,7 @@ class CreateUserForm extends Component {
   }
 }
 
-function DisplayUser (props){
+function UserList (props){
   return(
     <h2>Users</h2>
     <ul className='user-list'>
