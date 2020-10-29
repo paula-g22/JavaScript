@@ -14,6 +14,10 @@ class CreateUserForm extends Component {
     return this.state.user.firstName === '' || this.state.user.lastName === '' || this.state.user.username === ''
   }
 
+  contactExists = () => {
+    if (username in this.props.users.username)
+  }
+
   render(){
     return (
       <form>
@@ -29,7 +33,7 @@ class CreateUserForm extends Component {
             type='text'
             placeholder='Enter a username'
             />
-      <button disabled={this.fieldIsEmpty()} onClick={this.addUser}>Add</button>
+      <button disabled={this.fieldIsEmpty()} onClick={this.handleChange}>Add</button>
       </form>
     )
   }
