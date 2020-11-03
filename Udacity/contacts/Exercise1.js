@@ -16,6 +16,7 @@ class CreateUserForm extends Component {
 
   contactExists = () => {
     if (username in this.props.users.username)
+      return (<p className='error'>Username already exists. Please choose a new one.</p>)
   }
 
   render(){
@@ -24,6 +25,8 @@ class CreateUserForm extends Component {
         <input 
           type='text'
           placeholder='Enter First Name' 
+          name='firstName'
+          value={firstName}
           />
           <input
             type='text'
