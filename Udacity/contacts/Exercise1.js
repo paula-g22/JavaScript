@@ -14,10 +14,15 @@ class CreateUserForm extends Component {
     return this.state.user.firstName === '' || this.state.user.lastName === '' || this.state.user.username === ''
   }
 
-  contactExists = () => {
-    if (username in this.props.users.username)
-      return (<p className='error'>Username already exists. Please choose a new one.</p>)
-  }
+  contactExists = currUsername => {
+    const users = this.props.users;
+    for (let user of users) {
+      if (user.username === currUsername) {
+        return true;
+      }
+    }
+    return false;
+  };
 
   render(){
     return (
