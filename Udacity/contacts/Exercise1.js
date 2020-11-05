@@ -24,6 +24,17 @@ class CreateUserForm extends Component {
     return false;
   };
 
+  handleChange = () => {
+    if (contactExists === 'true') 
+      return <p className = 'error'>The username already exists. Please select a new username.</p>
+    else 
+      this.setState((currentState) => ({
+        user: {
+          firstName: 
+        }
+      }))
+  }
+
   render(){
     return (
       <form>
@@ -36,10 +47,12 @@ class CreateUserForm extends Component {
           <input
             type='text'
             placeholder='Enter Last Name'
+            value={lastName}
             />
           <input 
             type='text'
             placeholder='Enter a username'
+            value={username}
             />
       <button disabled={this.fieldIsEmpty()} onClick={this.handleChange}>Add</button>
       </form>
