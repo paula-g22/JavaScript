@@ -1,34 +1,30 @@
-import React from 'react';
+import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends React.Component {
-  state = {
-    value: '',
-    items: [],
-  };
+/*
+This exercise will help you put together and practice all of the concepts you've
+learned thus far. It will also help you form a strong foundational knowledge of
+React and prepare you for your first project.
 
-  handleChange = event => {
-    this.setState({ value: event.target.value });
-  };
+The instructions for this project are located in the `instructions.md` file.
+*/
 
-  addItem = event => {
-    event.preventDefault();
-    this.setState(oldState => ({
-      items: [...oldState.items, this.state.value],
-    }));
-  };
+const users = [{ username: 'Amy' }, { username: 'John' }];
 
-  deleteLastItem = event => {
-    this.setState(prevState => ({ items: this.state.items.slice(0, -1) }));
-  };
+const messages = [
+  { username: 'Amy', text: 'Hi, Jon!' },
+  { username: 'Amy', text: 'How are you?' },
+  { username: 'John', text: 'Hi, Amy! Good, you?' },
+];
 
-  inputIsEmpty = () => {
-    return this.state.value === '';
-  };
-
-  noItemsFound = () => {
-    return this.state.items.length === 0;
+class App extends Component {
+  /*
+  If the user did not type anything, he/she should not be
+  allowed to submit.
+  */
+  isDisabled = () => {
+    return false;
   };
 
   render() {
@@ -38,31 +34,138 @@ class App extends React.Component {
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">ReactND - Coding Practice</h1>
         </header>
-        <h2>Shopping List</h2>
-        <form onSubmit={this.addItem}>
-          <input
-            type="text"
-            placeholder="Enter New Item"
-            value={this.state.value}
-            onChange={this.handleChange}
-          />
-          <button disabled={this.inputIsEmpty()}>Add</button>
-        </form>
+        <div className="container">
+          <div className="chat-window">
+            <h2>Super Awesome Chat</h2>
+            <div className="name sender">{users[0].username}</div>
 
-        <button onClick={this.deleteLastItem} disabled={this.noItemsFound()}>
-          Delete Last Item
-        </button>
+            <ul className="message-list">
+              {messages.map((message, index) => (
+                <li
+                  key={index}
+                  className={
+                    message.username === users[0].username ? 'message sender' : 'message recipient'
+                  }
+                >
+                  <p>{`${message.username}: ${message.text}`}</p>
+                </li>
+              ))}
+            </ul>
 
-        <p className="items">Items</p>
-        <ol className="item-list">
-          {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
-        </ol>
+            <div>
+              <form className="input-group">
+                <input type="text" className="form-control" placeholder="Enter your message..." />
+                <div className="input-group-append">
+                  <button className="btn submit-button" disabled={this.isDisabled()}>
+                    SEND
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div className="chat-window">
+            <h2>Super Awesome Chat</h2>
+            <div className="name sender">{users[1].username}</div>
+            <ul className="message-list">
+              {messages.map((message, index) => (
+                <li
+                  key={index}
+                  className={
+                    message.username === users[1].username ? 'message sender' : 'message recipient'
+                  }
+                >
+                  <p>{`${message.username}: ${message.text}`}</p>
+                </li>
+              ))}
+            </ul>
+
+            <div>
+              <form className="input-group">
+                <input type="text" className="form-control" placeholder="Enter your message..." />
+                <div className="input-group-append">
+                  <button className="btn submit-button" disabled={this.isDisabled()}>
+                    SEND
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
 }
 
 export default App;
+
+
+
+// import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+
+// class App extends React.Component {
+//   state = {
+//     value: '',
+//     items: [],
+//   };
+
+//   handleChange = event => {
+//     this.setState({ value: event.target.value });
+//   };
+
+//   addItem = event => {
+//     event.preventDefault();
+//     this.setState(oldState => ({
+//       items: [...oldState.items, this.state.value],
+//     }));
+//   };
+
+//   deleteLastItem = event => {
+//     this.setState(prevState => ({ items: this.state.items.slice(0, -1) }));
+//   };
+
+//   inputIsEmpty = () => {
+//     return this.state.value === '';
+//   };
+
+//   noItemsFound = () => {
+//     return this.state.items.length === 0;
+//   };
+
+//   render() {
+//     return (
+//       <div className="App">
+//         <header className="App-header">
+//           <img src={logo} className="App-logo" alt="logo" />
+//           <h1 className="App-title">ReactND - Coding Practice</h1>
+//         </header>
+//         <h2>Shopping List</h2>
+//         <form onSubmit={this.addItem}>
+//           <input
+//             type="text"
+//             placeholder="Enter New Item"
+//             value={this.state.value}
+//             onChange={this.handleChange}
+//           />
+//           <button disabled={this.inputIsEmpty()}>Add</button>
+//         </form>
+
+//         <button onClick={this.deleteLastItem} disabled={this.noItemsFound()}>
+//           Delete Last Item
+//         </button>
+
+//         <p className="items">Items</p>
+//         <ol className="item-list">
+//           {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
+//         </ol>
+//       </div>
+//     );
+//   }
+// }
+
+// export default App;
 
 
 // import React, { Component } from 'react'

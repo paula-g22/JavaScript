@@ -36,6 +36,7 @@ class CreateUserForm extends Component {
   }
 
   render(){
+    const {user: {firstName, lastName, username}} = this.state
     return (
       <form>
         <input 
@@ -43,16 +44,19 @@ class CreateUserForm extends Component {
           placeholder='Enter First Name' 
           name='firstName'
           value={firstName}
+          onChange={}
           />
           <input
             type='text'
             placeholder='Enter Last Name'
             value={lastName}
+            onChange={}
             />
           <input 
             type='text'
             placeholder='Enter a username'
             value={username}
+            onChange={}
             />
       <button disabled={this.fieldIsEmpty()} onClick={this.handleChange}>Add</button>
       </form>
