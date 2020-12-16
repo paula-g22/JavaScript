@@ -4,12 +4,13 @@ import './App.css';
 
 class AddMessage extends Component {
     state = {
-        messages: [
-            { username: 'Amy', text: 'Hi, Jon!' },
-            { username: 'Amy', text: 'How are you?' },
-            { username: 'John', text: 'Hi, Amy! Good, you?' },
-          ]
+        message: ''
     }
+
+    handleChange = event => {
+        this.setState({ value: event.target.value });
+    };
+
 
     render () {
         return (
@@ -17,3 +18,5 @@ class AddMessage extends Component {
         )
     }
 }
+
+export default AddMessage;
