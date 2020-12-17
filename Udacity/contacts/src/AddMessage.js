@@ -14,6 +14,7 @@ class AddMessage extends Component {
     onSubmit = (event) => {
         event.preventDefault();
         this.props.onMessage(this.state.message);
+        this.setState({ message: ''})
     }
 
     isDisabled = () => {

@@ -34,6 +34,7 @@ class App extends Component {
       ['text']: message
     };
     this.setState(currentState => ({messages: currentState.messages.concat([newMessage])}))
+    console.log(this.state)
   };
 
   render() {
