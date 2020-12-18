@@ -30,7 +30,9 @@ class CreateUserForm extends Component {
     else 
       this.setState((currentState) => ({
         user: {
-          firstName: 
+          firstName: firstName,
+          lastName: lastName,
+          username: username
         }
       }))
   }

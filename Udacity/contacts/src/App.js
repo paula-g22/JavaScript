@@ -1,215 +1,40 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react'
 import './App.css';
-import ChatWindow from './ChatWindow';
-
-/*
-This exercise will help you put together and practice all of the concepts you've
-learned thus far. It will also help you form a strong foundational knowledge of
-React and prepare you for your first project.
-
-The instructions for this project are located in the `instructions.md` file.
-*/
-
-const users = [{ username: 'Amy' }, { username: 'John' }];
-
+import ListContacts from './ListContacts'
+import * as ContactsAPI from './utils/ContactsAPI'
 
 class App extends Component {
-  /*
-  If the user did not type anything, he/she should not be
-  allowed to submit.
-  */
-  
   state = {
-    messages: [
-  { username: 'Amy', text: 'Hi, Jon!' },
-  { username: 'Amy', text: 'How are you?' },
-  { username: 'John', text: 'Hi, Amy! Good, you?' },
-]
-  };
+    contacts: []
+  }
 
-  onMessage = (username, message) => {
-    let newMessage = {
-      ['username']: username,
-      ['text']: message
-    };
-    this.setState(currentState => ({messages: currentState.messages.concat([newMessage])}))
-    console.log(this.state)
-  };
-
+  componentDidMount() {
+    ContactsAPI.getAll()
+      .then((contacts) => {
+        this.setState(() => ({
+          contacts
+        }))
+      })
+  }
+      
+  removeContact = (contact) => {
+    this.setState((currentState) => ({
+        contacts: currentState.contacts.filter((c) => c.id !== contact.id)
+      }))
+  }
+    
   render() {
-    const {messages} = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">ReactND - Coding Practice</h1>
-        </header>
-        <div className="container">
-          {users.map(user => (
-            <ChatWindow
-            key={user.username}
-            user={user}
-            messages={messages}
-            onMessage={this.onMessage}
-            />
-          ))}
-        </div>
+        <ListContacts 
+          contacts={this.state.contacts}
+          onDeleteContact={this.removeContact}/>
       </div>
     );
   }
 }
-
+  
 export default App;
-
-
-
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
-// class App extends React.Component {
-//   state = {
-//     value: '',
-//     items: [],
-//   };
-
-//   handleChange = event => {
-//     this.setState({ value: event.target.value });
-//   };
-
-//   addItem = event => {
-//     event.preventDefault();
-//     this.setState(oldState => ({
-//       items: [...oldState.items, this.state.value],
-//     }));
-//   };
-
-//   deleteLastItem = event => {
-//     this.setState(prevState => ({ items: this.state.items.slice(0, -1) }));
-//   };
-
-//   inputIsEmpty = () => {
-//     return this.state.value === '';
-//   };
-
-//   noItemsFound = () => {
-//     return this.state.items.length === 0;
-//   };
-
-//   render() {
-//     return (
-//       <div className="App">
-//         <header className="App-header">
-//           <img src={logo} className="App-logo" alt="logo" />
-//           <h1 className="App-title">ReactND - Coding Practice</h1>
-//         </header>
-//         <h2>Shopping List</h2>
-//         <form onSubmit={this.addItem}>
-//           <input
-//             type="text"
-//             placeholder="Enter New Item"
-//             value={this.state.value}
-//             onChange={this.handleChange}
-//           />
-//           <button disabled={this.inputIsEmpty()}>Add</button>
-//         </form>
-
-//         <button onClick={this.deleteLastItem} disabled={this.noItemsFound()}>
-//           Delete Last Item
-//         </button>
-
-//         <p className="items">Items</p>
-//         <ol className="item-list">
-//           {this.state.items.map((item, index) => <li key={index}>{item}</li>)}
-//         </ol>
-//       </div>
-//     );
-//   }
-// }
-
-// export default App;
-
-
-// import React, { Component } from 'react'
-// import logo from './logo.svg';
-// import './App.css';
-// import ListContacts from './ListContacts'
-
-// // const contacts = [
-// //     {
-// //       "id": "karen",
-// //       "name": "Karen Isgrigg",
-// //       "handle": "@karen_isgrigg",
-// //       "avatarURL": "http://localhost:5001/karen.jpg"
-// //     },
-// //     {
-// //       "id": "richard",
-// //       "name": "Richard Kalehoff",
-// //       "handle": "@richardkalehoff",
-// //       "avatarURL": "http://localhost:5001/richard.jpg"
-// //     },
-// //     {
-// //       "id": "tyler",
-// //       "name": "Tyler McGinnis",
-// //       "handle": "@tylermcginnis",
-// //       "avatarURL": "http://localhost:5001/tyler.jpg"
-// //     }
-// //    ];
-  
-//   // class ContactList extends React.Component {
-//   //   render() {
-//   //     const people = this.props.contacts 
-  
-//   //     return <ol>
-//   //       {people.map((person) => (
-//   //         <li key={person.name}>{person.name}</li>
-//   //       ))}
-//   //     </ol>
-//   //   }
-//   // }
-  
-//   class App extends Component {
-//     state = {
-//       contacts: [
-//         {
-//           "id": "karen",
-//           "name": "Karen Isgrigg",
-//           "handle": "@karen_isgrigg",
-//           "avatarURL": "http://localhost:5001/karen.jpg"
-//         },
-//         {
-//           "id": "richard",
-//           "name": "Richard Kalehoff",
-//           "handle": "@richardkalehoff",
-//           "avatarURL": "http://localhost:5001/richard.jpg"
-//         },
-//         {
-//           "id": "tyler",
-//           "name": "Tyler McGinnis",
-//           "handle": "@tylermcginnis",
-//           "avatarURL": "http://localhost:5001/tyler.jpg"
-//         }
-//        ]
-//       }
-//       removeContact = (contact) => {
-//         this.setState((currentState) => ({
-//           contacts: currentState.contacts.filter((c) => c.id !== contact.id)
-//         }))
-//       }
-    
-//     render() {
-//       return (
-//         <div className="App">
-//           <ListContacts 
-//             contacts={this.state.contacts}
-//             onDeleteContact={this.removeContact}/>
-//         </div>
-//       );
-//     }
-//   }
-  
-//   export default App;
 
 // // class App extends Component {
 // //   state = {
