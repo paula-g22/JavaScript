@@ -1,25 +1,49 @@
 'use strict';
 
+//coding-challenge-4 for loops
+const calcTip = bill => bill < 50 || bill > 300 ? bill*.20 : bill*.15;
+
+let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+
+let tips = [];
+let totals = [];
+
+for(let i=0; i < bills.length; i++){
+    tips.push( calcTip(bills[i]) );
+    totals.push( bills[i]+tips[i] );
+}
+
+function calcAverage (arr){
+    let sum = 0;
+    for(let i=0; i < arr.length; i++){
+        sum += arr[i]
+    }
+    return sum / arr.length;
+}
+
+console.log(calcAverage(totals));
+
+
 //coding-challenge#3 objects
 
-const mark = {
-    fullName: 'Mark Miller',
-    mass: 78,
-    height: 1.69,
-    calcBMI: function() {return this.mass / this.height ** 2} 
-}
+// const mark = {
+//     fullName: 'Mark Miller',
+//     mass: 78,
+//     height: 1.69,
+//     calcBMI: function() {return this.mass / this.height ** 2} 
+// }
 
-const john = {
-    fullName: 'John Smith',
-    mass: 92,
-    height: 1.95,
-    calcBMI: function() {return this.mass / this.height ** 2}
-}
+// const john = {
+//     fullName: 'John Smith',
+//     mass: 92,
+//     height: 1.95,
+//     calcBMI: function() {return this.mass / this.height ** 2}
+// }
 
-console.log(`${mark.calcBMI() > john.calcBMI() ? `${mark.fullName}'s BMI (${mark.calcBMI()}) is higher than ${john.fullName}'s BMI (${john.calcBMI()})` : 
-`${john.fullName}'s BMI (${john.calcBMI()}) is higher than ${mark.fullName}'s BMI (${mark.calcBMI()})`}`)
+// console.log(`${mark.calcBMI() > john.calcBMI() ? `${mark.fullName}'s BMI (${Math.floor(mark.calcBMI())}) is higher than ${john.fullName}'s BMI (${john.calcBMI()})` : 
+// `${john.fullName}'s BMI (${john.calcBMI()}) is higher than ${mark.fullName}'s BMI (${mark.calcBMI()})`}`)
 
-//coding-challenge#2 arrays
+//coding-challenge#2 arrays 
 
 // const calcTip = bill => bill < 50 || bill > 300 ? bill*.20 : bill*.15;
 
