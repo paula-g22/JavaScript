@@ -1,28 +1,64 @@
-'use strict';
+"use strict";
+
+//coding challenge 1
+
+/*
+Given an array of forecasted maximum temperatures, the thermometer displays a string with these temperatures. 
+Example: [17, 21, 23] will print "... 17ºC in 1 days ... 21ºC in 2 days ... "
+
+Create a function 'printForecast' which takes in an array 'arr' and logs a string like the above to the console.
+*/
+
+// function printForecast(arr) {
+//   for (let i = 0; i < arr.length; i++) {
+//     if (i === 0) {
+//       console.log(`... ${arr[i]}ºC in ${i + 1} day `);
+//     } else {
+//       console.log(`... ${arr[i]}ºC in ${i + 1} days `);
+//     }
+//   }
+// }
+
+//the string is all in one line...you need a variable to keep track of it
+
+function printForecast(arr) {
+  let str = "";
+  for (let i = 0; i < arr.length; i++) {
+    if (i === 0) {
+      str += `${arr[i]}ºC in ${i + 1} day... `;
+    } else {
+      str += `${arr[i]}ºC in ${i + 1} days... `;
+    }
+  }
+  console.log(str);
+}
+
+printForecast([12, 5, -5, 0, 4]);
 
 //coding-challenge-4 for loops
-const calcTip = bill => bill < 50 || bill > 300 ? bill*.20 : bill*.15;
+// const calcTip = (bill) => (bill < 50 || bill > 300 ? bill * 0.2 : bill * 0.15);
 
-let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52]
+// let bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 
-let tips = [];
-let totals = [];
+// let tips = [];
+// let totals = [];
 
-for(let i=0; i < bills.length; i++){
-    tips.push( calcTip(bills[i]) );
-    totals.push( bills[i]+tips[i] );
-}
+// for (let i = 0; i < bills.length; i++) {
+//   tips.push(calcTip(bills[i]));
+//   totals.push(bills[i] + tips[i]);
+// }
 
-function calcAverage (arr){
-    let sum = 0;
-    for(let i=0; i < arr.length; i++){
-        sum += arr[i]
-    }
-    return sum / arr.length;
-}
+// function calcAverage(arr) {
+//   let sum = 0;
+//   for (let i = 0; i < arr.length; i++) {
+//     sum += arr[i];
+//   }
+//   return sum / arr.length;
+// }
 
-console.log(calcAverage(totals));
+// let x = "23";
 
+// console.log(calcAverage(totals));
 
 //coding-challenge#3 objects
 
@@ -30,7 +66,7 @@ console.log(calcAverage(totals));
 //     fullName: 'Mark Miller',
 //     mass: 78,
 //     height: 1.69,
-//     calcBMI: function() {return this.mass / this.height ** 2} 
+//     calcBMI: function() {return this.mass / this.height ** 2}
 // }
 
 // const john = {
@@ -40,10 +76,10 @@ console.log(calcAverage(totals));
 //     calcBMI: function() {return this.mass / this.height ** 2}
 // }
 
-// console.log(`${mark.calcBMI() > john.calcBMI() ? `${mark.fullName}'s BMI (${Math.floor(mark.calcBMI())}) is higher than ${john.fullName}'s BMI (${john.calcBMI()})` : 
+// console.log(`${mark.calcBMI() > john.calcBMI() ? `${mark.fullName}'s BMI (${Math.floor(mark.calcBMI())}) is higher than ${john.fullName}'s BMI (${john.calcBMI()})` :
 // `${john.fullName}'s BMI (${john.calcBMI()}) is higher than ${mark.fullName}'s BMI (${mark.calcBMI()})`}`)
 
-//coding-challenge#2 arrays 
+//coding-challenge#2 arrays
 
 // const calcTip = bill => bill < 50 || bill > 300 ? bill*.20 : bill*.15;
 
@@ -84,7 +120,6 @@ console.log(calcAverage(totals));
 
 // const bill = 430;
 // let tip = bill < 50 || bill > 300 ? bill*.20 : bill*.15;
-
 
 // console.log(`The bill was ${bill}, the tip was ${tip}, and the total was ${bill + tip}.`);
 
